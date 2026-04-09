@@ -1,0 +1,114 @@
+.navbar-main {
+    z-index: 1;
+}
+
+.custom-border {
+    border: 0.22px solid rgba(255, 255, 255, 0.275) !important;
+    z-index: 99;
+    display: flex;
+    width: 100vw !important;
+    align-items: center;
+    padding: 25px;
+    height: 80px;
+    border-radius: 40px;
+}
+
+.custom-line-height {
+    line-height: 23px;
+}
+
+.custom-disply-block {
+    display: none;
+}
+
+.diplsy-none-icon {
+    visibility: visible;
+}
+
+.custom-flex-dilapy {
+    display: none;
+}
+
+.side-menu.active .custom-flex-dilapy {
+    display: block;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 40%;
+    height: 100vh;
+    background: black;
+    transition: 0.4s ease;
+    z-index: 999;
+    padding: 20px;
+}
+
+
+@media (max-width: 1197px) {
+    .side-menu:not(.active) {
+        visibility: hidden;
+    }
+
+    .side-menu.active {
+        visibility: visible;
+        right: 0;
+    }
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+@media (min-width: 1197px) {
+    .custom-disply-block {
+        display: block;
+    }
+
+    .custom-flex-dilapy {
+        display: flex !important;
+    }
+
+    .diplsy-none-icon {
+        visibility: hidden;
+    }
+
+    .custom-border {
+        width: auto !important;
+    }
+
+    .side-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent !important;
+        right: 0;
+        padding: 0;
+        visibility: visible !important;
+        /* desktop par hamesha visible */
+    }
+}
+
+@media (min-width: 0px) and (max-width: 1197px) {
+    .custom-border {
+        border: 0.22px solid rgba(255, 255, 255, 0.275) !important;
+        z-index: 99;
+        display: flex;
+        width: 100vw !important;
+        align-items: center;
+        padding: 15px;
+        height: 60px;
+        border-radius: 30px;
+    }
+}
+@media (min-width: 0px) and (max-width: 320px) {
+  .side-menu{
+    width: 80%;
+  }
+}
+@media (min-width: 321px) and (max-width: 525px) {
+  .side-menu{
+    width: 80%;
+  }
+}

@@ -1,0 +1,38 @@
+ 
+.MainBannerWarper {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+} 
+.MainBannerWarper video {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  z-index: -1;
+}
+ 
+.customPostion {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.heroheading {
+  font-size: clamp(40px, 6vw, 120px);
+  line-height: 1.1;
+  font-weight: 600;
+}
+ 
+@media (max-width: 1197px) {
+  .customPostion {
+    bottom: 5%; 
+  }
+
+  .heroheading {
+    font-size: clamp(32px, 8vw, 60px);
+  }
+}
