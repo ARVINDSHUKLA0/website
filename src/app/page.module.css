@@ -13,6 +13,7 @@
   object-fit: cover;
   z-index: -1;
 }
+
 .customPostion {
   position: absolute;
   top: 70%;
@@ -28,9 +29,41 @@
   font-weight: 600;
   margin-bottom: 20px;
 }
-.customFontSize{
+
+.customFontSize {
   font-size: 60px;
   line-height: 70px;
+}
+
+.imageBox {
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 0 0 100% 0
+}
+
+.imageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.CustomFontBigSize {
+  font-size: 310px;
+  line-height: 300px;
+  font-weight: 900;
+  white-space: nowrap;
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+.CustomP{
+    position: relative;
+  overflow: hidden;
+}
+.CustomP h2{
+   position: absolute;
+  white-space: nowrap;
+  will-change: transform;
 }
  
 @media (max-width: 768px) {
@@ -42,20 +75,30 @@
     left: 0px;
     padding: 0px 5px;
     /* Adjust this value as needed */
-   
+
   }
-  .customFontSize{
-  font-size: 36px;
-  line-height: 43px;
-}
+
+  .customFontSize {
+    font-size: 36px;
+    line-height: 43px;
+  }
+
 
   .heroheading {
-    font-size: clamp(28px, 7vw, 40px); 
+    font-size: clamp(28px, 7vw, 40px);
   }
 
   .MainBannerWarper {
     height: auto;
     min-height: 100vh;
+  }
+
+  .CustomFontBigSize {
+    font-size: 100px;
+    line-height: 120px;
+    font-weight: 900;
+    white-space: nowrap;
+    will-change: transform;
   }
 }
 
@@ -64,26 +107,57 @@
     margin-top: 35vh;
   }
 
+  .CustomFontBigSize {
+    font-size: 60px;
+    line-height: 40px;
+    font-weight: 900;
+    white-space: nowrap;
+    will-change: transform;
+  }
+
   .heroheading {
     font-size: clamp(24px, 6vw, 32px);
   }
+
+  .imageBox {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px !important;
+
+  }
+
+  .imageBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
- 
+
 @media (min-width: 769px) and (max-width: 1197px) {
   .customPostion {
     top: 80%;
   }
-  .customFontSize{
-  font-size: 45px;
-  line-height: 50px;
-}
+
+  .customFontSize {
+    font-size: 45px;
+    line-height: 50px;
+  }
 
   .heroheading {
     font-size: clamp(32px, 6vw, 50px);
   }
+
+  .CustomFontBigSize {
+    font-size: 200px;
+    line-height: 160px;
+    font-weight: 900;
+    white-space: nowrap;
+    will-change: transform;
+  }
 }
+
 @media (min-width: 1600px) {
-  .customWidthText{
+  .customWidthText {
     width: 1600px !important;
     margin: auto;
   }
