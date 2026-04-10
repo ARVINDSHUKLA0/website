@@ -15,29 +15,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const textRef = useRef();
   const textRefTwo = useRef();
-  // useEffect(() => {
-  //   gsap.fromTo(
-  //     textRef.current,
-  //     {
-  //       y: 50,
-  //       z: -50,
-  //       rotateX: -80,
-  //       transformOrigin: "top center",
-  //     },
-  //     {
-  //       y: 0,
-  //       z: 0,
-  //       rotateX: 0,
-  //       ease: "power2.out",
-  //       scrollTrigger: {
-  //         trigger: textRef.current,
-  //         start: "top 90%",
-  //         end: "top 40%",
-  //         scrub: 1.5,
-  //       },
-  //     }
-  //   );
-  // }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -92,6 +69,64 @@ export default function Home() {
     { id: "4", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
   ]
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const container = document.querySelector(".boxes");
+  //     const boxes = container?.querySelectorAll(".box");
+
+  //     if (!boxes || boxes.length < 5) return;
+
+  //     const scroll = window.scrollY;
+
+  //     if (scroll > 100) {
+
+  //       const move = container.offsetWidth / 3;
+  //       const gap = 330;
+
+  //       boxes[0].style.transform = `translate(calc(-50% - ${gap * 2}px), -50%)`;
+  //       boxes[1].style.transform = `translate(calc(-50% - ${gap}px), -50%)`;
+  //       boxes[2].style.transform = `translate(-50%, -50%)`;
+  //       boxes[3].style.transform = `translate(calc(-50% + ${gap}px), -50%)`;
+  //       boxes[4].style.transform = `translate(calc(-50% + ${gap * 2}px), -50%)`;
+
+  //     } else {
+  //       boxes.forEach((box) => {
+  //         box.style.transform = "translate(-50%, -50%)";
+  //       });
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+
+
+  useEffect(() => {
+  const handleScroll = () => {
+    const container = document.querySelector(".boxes");
+    const boxes = container?.querySelectorAll(".box");
+
+    if (!boxes || boxes.length < 5) return;
+
+    const rect = container.getBoundingClientRect();
+    const screenHeight = window.innerHeight;
+
+    // 👇 progress 0 → 1 (smooth)
+    let progress = (screenHeight - rect.top) / screenHeight;
+    progress = Math.max(0, Math.min(1, progress));
+
+    const gap = 320; // 300 box + spacing
+
+    boxes[0].style.transform = `translate(calc(-50% - ${gap * 2 * progress}px), -50%)`;
+    boxes[1].style.transform = `translate(calc(-50% - ${gap * 1 * progress}px), -50%)`;
+    boxes[2].style.transform = `translate(-50%, -50%)`;
+    boxes[3].style.transform = `translate(calc(-50% + ${gap * 1 * progress}px), -50%)`;
+    boxes[4].style.transform = `translate(calc(-50% + ${gap * 2 * progress}px), -50%)`;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
     <section className={styles.page}>
@@ -248,10 +283,93 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container-fluid custom-container">
-          
+      {/* <div className="mb-5 position-relative">
+          <div className={`${styles.MainServices} `}>
+                <div>Capabilities</div>
+                <div>Capabilities</div>
+                <div>Capabilities</div>
+                <div className="d-flex mt-50 gap-5">
+                     <div className={`bg-info py-5  px-5 ${styles.CustomPostinSer}`}>1</div>
+                     <div className={`bg-info py-5  px-5 ${styles.CustomPostinSer}`}>1</div>
+                     <div className={`bg-info py-5  px-5 ${styles.CustomPostinSer}`}>1</div>
+                     <div className={`bg-info py-5  px-5 ${styles.CustomPostinSer}`}>1</div>
+                     <div className={`bg-info py-5  px-5 ${styles.CustomPostinSer}`}>1</div>
+                     
+                </div>
+          </div>
+       </div> */}
+
+      <div className="mb-5">
+        <div className={styles.MainServices}>
+
+          <div>Capabilities</div>
+          <div>Capabilities</div>
+          <div>Capabilities</div>
+
+          <div className="boxes">
+            <div className="box">1</div>
+            <div className="box">1</div>
+            <div className="box active">1</div> {/* center */}
+            <div className="box">1</div>
+            <div className="box">1</div>
+          </div>
+
+        </div>
       </div>
 
+      <p>
+        Lorem Ipsum
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+        "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+        What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+        Why do we use it?
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+        Where does it come from?
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+
+        Where can I get some?
+        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+
+        5
+        paragraphs
+        words
+        bytes
+        lists
+        Start with 'Lorem
+        ipsum dolor sit amet...'
+        Lorem Ipsum
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+        "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+        What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+        Why do we use it?
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+        Where does it come from?
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+
+        Where can I get some?
+        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+
+        5
+        paragraphs
+        words
+        bytes
+        lists
+        Start with 'Lorem
+        ipsum dolor sit amet...'
+
+      </p>
 
 
 

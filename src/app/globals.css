@@ -62,24 +62,33 @@
   display: block;
   transform-style: preserve-3d;
 }
-
  
-
- 
- 
-@media (max-width: 1024) {
-  .mt-100{
-    margin-top: 30px;
-  }
-  .mb-100{
-    margin-bottom: 30px;
-  }
-}
-
-
 @media (min-width: 1600) {
   .custom-container {
     max-width: 1643px;
     margin: auto;
   }
+}
+
+.box{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  
+  width: 300px;
+  height: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: black;
+  color: white;
+
+  transform: translate(-50%, -50%);
+}
+
+/* center box */
+.box:nth-child(3){
+  z-index: 5;
 }
