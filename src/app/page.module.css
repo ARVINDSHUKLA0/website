@@ -1,10 +1,10 @@
- 
 .MainBannerWarper {
   height: 100vh;
   width: 100%;
   position: relative;
   overflow: hidden;
-} 
+}
+
 .MainBannerWarper video {
   height: 100%;
   width: 100%;
@@ -13,26 +13,78 @@
   object-fit: cover;
   z-index: -1;
 }
- 
 .customPostion {
   position: absolute;
   top: 70%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
+  padding: 20px 20px;
 }
 
 .heroheading {
   font-size: clamp(40px, 6vw, 120px);
-  line-height: 1.1;
+  line-height: 1.2;
   font-weight: 600;
+  margin-bottom: 20px;
+}
+.customFontSize{
+  font-size: 60px;
+  line-height: 70px;
 }
  
-@media (max-width: 1197px) {
+@media (max-width: 768px) {
   .customPostion {
-    bottom: 5%; 
+    position: relative;
+    top: auto;
+    transform: none;
+    margin-top: 50vh;
+    left: 0px;
+    padding: 0px 5px;
+    /* Adjust this value as needed */
+   
+  }
+  .customFontSize{
+  font-size: 36px;
+  line-height: 43px;
+}
+
+  .heroheading {
+    font-size: clamp(28px, 7vw, 40px); 
+  }
+
+  .MainBannerWarper {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .customPostion {
+    margin-top: 35vh;
   }
 
   .heroheading {
-    font-size: clamp(32px, 8vw, 60px);
+    font-size: clamp(24px, 6vw, 32px);
+  }
+}
+ 
+@media (min-width: 769px) and (max-width: 1197px) {
+  .customPostion {
+    top: 80%;
+  }
+  .customFontSize{
+  font-size: 45px;
+  line-height: 50px;
+}
+
+  .heroheading {
+    font-size: clamp(32px, 6vw, 50px);
+  }
+}
+@media (min-width: 1600px) {
+  .customWidthText{
+    width: 1600px !important;
+    margin: auto;
   }
 }

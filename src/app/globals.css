@@ -45,8 +45,31 @@
 .mb-50{
   margin-bottom: 50px;
 }
+.mt-100{
+  margin-top: 100px;
+}
+.mb-100{
+  margin-bottom: 100px;
+}
 .white-custom-color{
   color: white;
+}
+.title-wrapper {
+  perspective: 1000px; /* 👈 3D effect */
+}
+
+.line {
+  display: block;
+  transform-style: preserve-3d;
+}
+
+@media (max-width: 1024) {
+  .mt-100{
+    margin-top: 30px;
+  }
+  .mb-100{
+    margin-bottom: 30px;
+  }
 }
 
 
