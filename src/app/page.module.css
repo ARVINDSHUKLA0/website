@@ -31,8 +31,8 @@
 }
 
 .customFontSize {
-  font-size: 60px;
-  line-height: 70px;
+  font-size: 50px;
+  line-height: 55px;
 }
 
 .imageBox {
@@ -48,6 +48,18 @@
   object-fit: cover;
 }
 
+.ImagesHeight {
+  height: 700px;
+  width: 100%;
+}
+
+.ImagesHeight img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
 .CustomFontBigSize {
   font-size: 310px;
   line-height: 300px;
@@ -56,16 +68,12 @@
   transition: transform 0.1s linear;
   will-change: transform;
 }
-.CustomP{
-    position: relative;
-  overflow: hidden;
+
+.CustomP {
+  position: relative;
+  overflow: hidden !important;
 }
-.CustomP h2{
-   position: absolute;
-  white-space: nowrap;
-  will-change: transform;
-}
- 
+
 @media (max-width: 768px) {
   .customPostion {
     position: relative;
@@ -86,6 +94,10 @@
 
   .heroheading {
     font-size: clamp(28px, 7vw, 40px);
+  }
+
+  .ImagesHeight {
+    height: auto;
   }
 
   .MainBannerWarper {
