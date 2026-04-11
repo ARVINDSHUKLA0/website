@@ -125,6 +125,7 @@
   margin: auto;
   position: sticky; 
   top: 100px; 
+    height: calc(618px - 100px); 
 }
 
 /* center layout (desktop) */

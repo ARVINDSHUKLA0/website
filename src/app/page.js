@@ -390,6 +390,7 @@ export default function Home() {
 
       <div className="mb-5 hh" >
         <div className={styles.MainServices}>
+          <div className="d-xl-block d-none">
           <div className="d-flex justify-content-between align-items-center border border-dark m-3 p-3 rounded-4">
               <div>
                 <img className="img-fluid" src="/assets/img/dark-logo.png" width={90}/>
@@ -404,6 +405,7 @@ export default function Home() {
             <h5>Capabilities</h5>
             <h5>Explore</h5>
             </div> 
+            </div>
           <div className="boxes"> 
             {
               dataServices.map((DataServicesItem, index) => (

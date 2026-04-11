@@ -103,8 +103,8 @@
     top: auto !important;
     transform: none !important;
 
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
     flex: 0 0 45%;
   }
     .boxes{
@@ -118,9 +118,9 @@
 }
 
 @media (max-width: 480px) {
-  .box{
-    height: 100% !important; 
-    width: 100% !important;
+  .box{ 
+    margin: 10px;
+    width: 94% !important;
   }
      .boxes{
     position: static !important;
