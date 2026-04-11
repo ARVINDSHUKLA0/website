@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import { motion, useScroll } from "framer-motion";
 import ImgesScollSlider from "@/Compoents/ImgesScollSlider";
+import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -62,99 +63,176 @@ export default function Home() {
 
   }, []);
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+
+  //     const boxes = document.querySelectorAll(".box");
+
+  //     // 👇 MOBILE → sab reset karo
+  //     if (window.innerWidth < 1197) {
+  //       boxes.forEach(box => {
+  //         box.style.transform = "none";
+  //       });
+  //       return;
+  //     }
+
+  //     const container = document.querySelector(".boxes");
+  //     if (!container || boxes.length < 5) return;
+
+  //     const rect = container.getBoundingClientRect();
+
+  //     const start = window.innerHeight * 0.8;
+  //     const end = window.innerHeight * 0.2;
+
+  //     let progress = (start - rect.top) / (start - end);
+  //     progress = Math.max(0, Math.min(1, progress));
+
+  //     const gap = 250;
+
+  //     boxes[0].style.transform = `translate(calc(-50% - ${gap * 2 * progress}px), -50%)`;
+  //     boxes[1].style.transform = `translate(calc(-50% - ${gap * progress}px), -50%)`;
+  //     boxes[2].style.transform = `translate(-50%, -50%)`;
+  //     boxes[3].style.transform = `translate(calc(-50% + ${gap * progress}px), -50%)`;
+  //     boxes[4].style.transform = `translate(calc(-50% + ${gap * 2 * progress}px), -50%)`;
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("resize", handleScroll); // 👈 important
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //     window.removeEventListener("resize", handleScroll);
+  //   };
+  // }, []);
+
+
+  //   useEffect(() => {
+  //   const handleScroll = () => {
+
+
+  //     const boxes = document.querySelectorAll(".box");
+
+
+  //     // mobile reset
+  //     if (window.innerWidth < 1197) {
+  //       boxes.forEach(box => {
+  //         box.style.transform = "none";
+  //       });
+  //       return;
+  //     }
+
+  //     const container = document.querySelector(".boxes");
+  //     if (!container || boxes.length === 0) return;
+
+  //     const rect = container.getBoundingClientRect();
+
+  //     const start = window.innerHeight * 0.8;
+  //     const end = window.innerHeight * 0.2;
+
+  //     let progress = (start - rect.top) / (start - end);
+  //     progress = Math.max(0, Math.min(1, progress));
+
+  //     const gap = 250;
+
+  //     // 👇 center index auto calculate
+  //     const centerIndex = Math.floor(boxes.length / 2);
+
+  //     boxes.forEach((box, i) => {
+  //       const offset = i - centerIndex;
+
+  //       box.style.transform = `translate(calc(-50% + ${offset * gap * progress}px), -50%)`;
+  //     });
+
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("resize", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //     window.removeEventListener("resize", handleScroll);
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+
+      const boxes = document.querySelectorAll(".box");
+
+      if (window.innerWidth < 1197) {
+        boxes.forEach(box => {
+          box.style.transform = "none";
+        });
+        return;
+      }
+
+      const container = document.querySelector(".boxes");
+      if (!container || boxes.length === 0) return;
+
+      const rect = container.getBoundingClientRect();
+
+      const start = window.innerHeight * 0.8;
+      const end = window.innerHeight * 0.2;
+
+      let progress = (start - rect.top) / (start - end);
+      progress = Math.max(0, Math.min(1, progress));
+
+      // 👇 YAHI ADD KIYA HAI
+      // const gap = 280;
+      const containerWidth = window.innerWidth;
+      const boxWidth = 300;
+      const spacing = 10;
+
+      const gap = boxWidth + spacing; // 340 
+      const maxGap = (containerWidth - boxWidth) / (boxes.length);
+      const isEven = boxes.length % 2 === 0;
+
+      boxes.forEach((box, i) => {
+        let offset;
+
+        if (isEven) {
+          const centerLeft = boxes.length / 2 - 1;
+          const centerRight = boxes.length / 2;
+
+          if (i <= centerLeft) {
+            offset = i - centerLeft - 0.5;
+          } else {
+            offset = i - centerRight + 0.5;
+          }
+
+        } else {
+          const centerIndex = Math.floor(boxes.length / 2);
+          offset = i - centerIndex;
+        }
+
+        box.style.transform = `translate(calc(-50% + ${offset * gap * progress}px), -50%)`;
+      });
+
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
   const DataStrogre = [
     { id: "1", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
     { id: "2", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
     { id: "3", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
     { id: "4", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
   ]
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const container = document.querySelector(".boxes");
-  //     const boxes = container?.querySelectorAll(".box");
-
-  //     if (!boxes || boxes.length < 5) return;
-
-  //     const scroll = window.scrollY;
-
-  //     if (scroll > 100) {
-
-  //       const move = container.offsetWidth / 3;
-  //       const gap = 330;
-
-  //       boxes[0].style.transform = `translate(calc(-50% - ${gap * 2}px), -50%)`;
-  //       boxes[1].style.transform = `translate(calc(-50% - ${gap}px), -50%)`;
-  //       boxes[2].style.transform = `translate(-50%, -50%)`;
-  //       boxes[3].style.transform = `translate(calc(-50% + ${gap}px), -50%)`;
-  //       boxes[4].style.transform = `translate(calc(-50% + ${gap * 2}px), -50%)`;
-
-  //     } else {
-  //       boxes.forEach((box) => {
-  //         box.style.transform = "translate(-50%, -50%)";
-  //       });
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-
-
-//   useEffect(() => {
-//   const handleScroll = () => {
-//     const container = document.querySelector(".boxes");
-//     const boxes = container?.querySelectorAll(".box");
-
-//     if (!boxes || boxes.length < 5) return;
-
-//     const rect = container.getBoundingClientRect();
-//     const screenHeight = window.innerHeight;
-
-//     // 👇 progress 0 → 1 (smooth)
-//     let progress = (screenHeight - rect.top) / screenHeight;
-//     progress = Math.max(0, Math.min(1, progress));
-
-//     const gap = 320; // 300 box + spacing
-
-//     boxes[0].style.transform = `translate(calc(-50% - ${gap * 2 * progress}px), -50%)`;
-//     boxes[1].style.transform = `translate(calc(-50% - ${gap * 1 * progress}px), -50%)`;
-//     boxes[2].style.transform = `translate(-50%, -50%)`;
-//     boxes[3].style.transform = `translate(calc(-50% + ${gap * 1 * progress}px), -50%)`;
-//     boxes[4].style.transform = `translate(calc(-50% + ${gap * 2 * progress}px), -50%)`;
-//   };
-
-//   window.addEventListener("scroll", handleScroll);
-//   return () => window.removeEventListener("scroll", handleScroll);
-// }, []);
-
-useEffect(() => {
-  const handleScroll = () => {
-    const container = document.querySelector(".boxes");
-    const boxes = container?.querySelectorAll(".box");
-
-    if (!boxes || boxes.length < 5) return;
-
-    const rect = container.getBoundingClientRect();
-
-    const start = window.innerHeight * 0.8;
-    const end = window.innerHeight * 0.2;
-
-    let progress = (start - rect.top) / (start - end);
-    progress = Math.max(0, Math.min(1, progress));
-
-    const gap = 320;
-
-    boxes[0].style.transform = `translate(calc(-50% - ${gap * 2 * progress}px), -50%)`;
-    boxes[1].style.transform = `translate(calc(-50% - ${gap * 1 * progress}px), -50%)`;
-    boxes[2].style.transform = `translate(-50%, -50%)`;
-    boxes[3].style.transform = `translate(calc(-50% + ${gap * 1 * progress}px), -50%)`;
-    boxes[4].style.transform = `translate(calc(-50% + ${gap * 2 * progress}px), -50%)`;
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+  const dataServices = [
+    { id: '1', ServicesImg: "/assets/img/icon-s-1.webp", name: "Branding" },
+    { id: '2', ServicesImg: "/assets/img/icon-s-1.webp", name: "Product Design & Development" },
+    { id: '3', ServicesImg: "/assets/img/icon-s-1.webp", name: "Packaging Design" },
+    { id: '4', ServicesImg: "/assets/img/icon-s-1.webp", name: "Strategy" },
+    { id: '5', ServicesImg: "/assets/img/icon-s-1.webp", name: "Marketing & Content" },
+    { id: '6', ServicesImg: "/assets/img/icon-s-1.webp", name: "Pet Casting" },
+  ]
   return (
     <section className={styles.page}>
       <div className={`${styles.MainBannerWarper} position-relative`}>
@@ -246,7 +324,7 @@ useEffect(() => {
         </div>
         <ImgesScollSlider />
       </div>
-      <div className="container-fluid custom-container">
+      <div className="container-fluid custom-container" >
         <div className="mt-50 pt-5">
           <div className="row  m-0">
             <div className="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -300,7 +378,7 @@ useEffect(() => {
             }
           </div>
         </div>
-        <div className="row m-0">
+        <div className="row m-0 hh">
           <div className="col-12 col-lg-6 ">
             <div className="mt-100 mb-100" style={{ perspective: "1000px" }}>
               <h2 ref={textRefTwo} className={`${styles.customFontSize} title-wrapper`}>
@@ -310,35 +388,37 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* <div className="mb-5 position-relative">
-          <div className={`${styles.MainServices} `}>
-                <div>Capabilities</div>
-                <div>Capabilities</div>
-                <div>Capabilities</div>
-                <div className="d-flex mt-50 gap-5">
-                     <div className={`bg-info py-5  px-5 ${styles.CustomPostinSer}`}>1</div>
-                     <div className={`bg-info py-5  px-5 ${styles.CustomPostinSer}`}>1</div>
-                     <div className={`bg-info py-5  px-5 ${styles.CustomPostinSer}`}>1</div>
-                     <div className={`bg-info py-5  px-5 ${styles.CustomPostinSer}`}>1</div>
-                     <div className={`bg-info py-5  px-5 ${styles.CustomPostinSer}`}>1</div>
-                     
-                </div>
-          </div>
-       </div> */}
-
-      <div className="mb-5" style={{overflow : "hidden"}}>
+      <div className="mb-5 hh" >
         <div className={styles.MainServices}>
-
-          <div>Capabilities</div>
-          <div>Capabilities</div>
-          <div>Capabilities</div>
-
-          <div className="boxes">
-            <div className="box">1</div>
-            <div className="box">1</div>
-            <div className="box active">1</div> {/* center */}
-            <div className="box">1</div>
-            <div className="box">1</div>
+          <div className="d-flex justify-content-between align-items-center border border-dark m-3 p-3 rounded-4">
+              <div>
+                <img className="img-fluid" src="/assets/img/dark-logo.png" width={90}/>
+              </div>
+              <div>
+                <Link href="#">
+                <i className="fa-solid fa-bars fs-18 text-dark"></i>
+                </Link>
+              </div>
+          </div>
+          <div className="pt-1 ps-3">
+            <h5>Capabilities</h5>
+            <h5>Explore</h5>
+            </div> 
+          <div className="boxes"> 
+            {
+              dataServices.map((DataServicesItem, index) => (
+                <div className="box mb-2   mb-md-0" key={index}>
+                  <div className="position-relative">
+                    <div className={`${styles.onePostion}`}>
+                      <img className="ms-2" src={DataServicesItem.ServicesImg} width={50} />
+                    </div>
+                    <div className={`${styles.twoPostion}`}>
+                      <h3>{DataServicesItem.name}</h3>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
           </div>
 
         </div>
