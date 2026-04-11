@@ -101,7 +101,34 @@ export default function Home() {
   // }, []);
 
 
-  useEffect(() => {
+//   useEffect(() => {
+//   const handleScroll = () => {
+//     const container = document.querySelector(".boxes");
+//     const boxes = container?.querySelectorAll(".box");
+
+//     if (!boxes || boxes.length < 5) return;
+
+//     const rect = container.getBoundingClientRect();
+//     const screenHeight = window.innerHeight;
+
+//     // 👇 progress 0 → 1 (smooth)
+//     let progress = (screenHeight - rect.top) / screenHeight;
+//     progress = Math.max(0, Math.min(1, progress));
+
+//     const gap = 320; // 300 box + spacing
+
+//     boxes[0].style.transform = `translate(calc(-50% - ${gap * 2 * progress}px), -50%)`;
+//     boxes[1].style.transform = `translate(calc(-50% - ${gap * 1 * progress}px), -50%)`;
+//     boxes[2].style.transform = `translate(-50%, -50%)`;
+//     boxes[3].style.transform = `translate(calc(-50% + ${gap * 1 * progress}px), -50%)`;
+//     boxes[4].style.transform = `translate(calc(-50% + ${gap * 2 * progress}px), -50%)`;
+//   };
+
+//   window.addEventListener("scroll", handleScroll);
+//   return () => window.removeEventListener("scroll", handleScroll);
+// }, []);
+
+useEffect(() => {
   const handleScroll = () => {
     const container = document.querySelector(".boxes");
     const boxes = container?.querySelectorAll(".box");
@@ -109,13 +136,14 @@ export default function Home() {
     if (!boxes || boxes.length < 5) return;
 
     const rect = container.getBoundingClientRect();
-    const screenHeight = window.innerHeight;
 
-    // 👇 progress 0 → 1 (smooth)
-    let progress = (screenHeight - rect.top) / screenHeight;
+    const start = window.innerHeight * 0.8;
+    const end = window.innerHeight * 0.2;
+
+    let progress = (start - rect.top) / (start - end);
     progress = Math.max(0, Math.min(1, progress));
 
-    const gap = 320; // 300 box + spacing
+    const gap = 320;
 
     boxes[0].style.transform = `translate(calc(-50% - ${gap * 2 * progress}px), -50%)`;
     boxes[1].style.transform = `translate(calc(-50% - ${gap * 1 * progress}px), -50%)`;
@@ -127,7 +155,6 @@ export default function Home() {
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
-
   return (
     <section className={styles.page}>
       <div className={`${styles.MainBannerWarper} position-relative`}>
@@ -299,7 +326,7 @@ export default function Home() {
           </div>
        </div> */}
 
-      <div className="mb-5">
+      <div className="mb-5" style={{overflow : "hidden"}}>
         <div className={styles.MainServices}>
 
           <div>Capabilities</div>
