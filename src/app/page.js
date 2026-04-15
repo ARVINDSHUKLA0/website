@@ -9,11 +9,13 @@ import SplitType from "split-type";
 import { motion, useScroll } from "framer-motion";
 import ImgesScollSlider from "@/Compoents/ImgesScollSlider";
 import Link from "next/link";
+import ZoomPlus from "@/Compoents/ZoomPlus";
 gsap.registerPlugin(ScrollTrigger);
 
 
 
 export default function Home() {
+  const [active, setActive] = useState(false);
   const textRef = useRef();
   const textRefTwo = useRef();
 
@@ -176,9 +178,6 @@ export default function Home() {
 
       let progress = (start - rect.top) / (start - end);
       progress = Math.max(0, Math.min(1, progress));
-
-      // 👇 YAHI ADD KIYA HAI
-      // const gap = 280;
       const containerWidth = window.innerWidth;
       const boxWidth = 300;
       const spacing = 10;
@@ -219,6 +218,38 @@ export default function Home() {
     };
   }, []);
 
+  const threeRef = useRef();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!threeRef.current) return;
+
+      const section = document.querySelector(".userbox");
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+
+      const start = window.innerHeight;   // section enter
+      const end = -rect.height;           // section exit
+
+      let progress = (start - rect.top) / (start - end);
+      progress = Math.max(0, Math.min(1, progress));
+
+      // 👇 smooth move based on section
+      const moveY = progress * 500; // adjust value
+
+      threeRef.current.style.transform = `translate(-50%, ${moveY}px)`;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+ 
+
   const DataStrogre = [
     { id: "1", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
     { id: "2", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
@@ -233,6 +264,8 @@ export default function Home() {
     { id: '5', ServicesImg: "/assets/img/icon-s-1.webp", name: "Marketing & Content" },
     { id: '6', ServicesImg: "/assets/img/icon-s-1.webp", name: "Pet Casting" },
   ]
+
+  const sectionRef = useRef();
   return (
     <section className={styles.page}>
       <div className={`${styles.MainBannerWarper} position-relative`}>
@@ -364,16 +397,16 @@ export default function Home() {
           <div className="row m-0">
             {
               DataStrogre.map((DataValue, index) => (
-                <>
-                  <div className="col-lg-6 col-md-6 col-sm-12 col-12 my-4">
-                    <img className="img-fluid rounded-4" src={DataValue.imegs} />
-                    <div className="py-3 ps-1">
-                      <p className="m-0 fs-16 fw-bold">{DataValue.txtOne}</p>
-                      <p className="m-0 fs-16 fw-bold">{DataValue.txtTwo}</p>
-                      <p className="m-0 fs-16 fw-bold">{DataValue.years}</p>
-                    </div>
+
+                <div key={index} className="col-lg-6 col-md-6 col-sm-12 col-12 my-4">
+                  <img className="img-fluid rounded-4" src={DataValue.imegs} />
+                  <div className="py-3 ps-1">
+                    <p className="m-0 fs-16 fw-bold">{DataValue.txtOne}</p>
+                    <p className="m-0 fs-16 fw-bold">{DataValue.txtTwo}</p>
+                    <p className="m-0 fs-16 fw-bold">{DataValue.years}</p>
                   </div>
-                </>
+                </div>
+
               ))
             }
           </div>
@@ -388,25 +421,25 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mb-5 hh" >
+      <div ref={sectionRef} className="mb-5 userbox" >
         <div className={styles.MainServices}>
           <div className="d-xl-block d-none">
-          <div className="d-flex justify-content-between align-items-center border border-dark m-3 p-3 rounded-4">
+            <div className="d-flex justify-content-between align-items-center border border-dark m-3 p-3 rounded-4">
               <div>
-                <img className="img-fluid" src="/assets/img/dark-logo.png" width={90}/>
+                <img className="img-fluid" src="/assets/img/dark-logo.png" width={90} />
               </div>
               <div>
                 <Link href="#">
-                <i className="fa-solid fa-bars fs-18 text-dark"></i>
+                  <i className="fa-solid fa-bars fs-18 text-dark"></i>
                 </Link>
               </div>
-          </div>
-          <div className="pt-1 ps-3">
-            <h5>Capabilities</h5>
-            <h5>Explore</h5>
-            </div> 
             </div>
-          <div className="boxes"> 
+            <div className="pt-1 ps-3">
+              <h5>Capabilities</h5>
+              <h5>Explore</h5>
+            </div>
+          </div>
+          <div className="boxes">
             {
               dataServices.map((DataServicesItem, index) => (
                 <div className="box mb-2   mb-md-0" key={index}>
@@ -417,14 +450,29 @@ export default function Home() {
                     <div className={`${styles.twoPostion}`}>
                       <h3>{DataServicesItem.name}</h3>
                     </div>
+
                   </div>
+
                 </div>
               ))
             }
           </div>
+          {/* <div className={styles.ThreePostion}>
+            helo
+          </div> */}
+          <div ref={threeRef} className={` ms-1 ${styles.ThreePostion} ${active ? styles.active : ""}`}>
+            <img  src="/assets/img/addicon.png" width={20}/>
+          </div>
+
+           
 
         </div>
+
+
+
       </div>
+
+
 
       <p>
         Lorem Ipsum

@@ -1,0 +1,48 @@
+.zoom-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.zoom-circle {
+  /* width: 200px;   👈 bigger start */
+  /* height: 200px; */
+  background: black;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translate(-50%, -50%);
+
+  will-change: transform, width, height;
+
+  transition: none; /* ❌ remove */
+}
+.plus {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.plus .h,
+.plus .v {
+  position: absolute;
+  background: white;
+}
+
+.plus .h {
+  width: 100%;
+  height: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.plus .v {
+  height: 100%;
+  width: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}

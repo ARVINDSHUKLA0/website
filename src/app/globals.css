@@ -69,19 +69,42 @@
     margin: auto;
   }
 }
+
  
-.hh{
+.userbox{
   overflow: hidden !important; 
+  height: 200vh;
+  position: relative;
+}
+.hh {
+  position: relative;
+  /* height: 200vh; */
+}
+
+ 
+
+.plus-box {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background: black;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+
+  transition: transform 0.2s linear;
 }
 .box{
   position: absolute;
   left: 50%;
-  top: 64%;
+  top: 61%;
   width: 300;
   height: 300px;
   border-radius: 9px;
   display: flex; 
-  background: black;
+  background: black ;
   color: white;
 
   transform: translate(-50%, -50%);
