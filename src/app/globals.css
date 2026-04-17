@@ -1,154 +1,155 @@
-*{
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-.list-style-none{
-  list-style: none;
-}
-.text-decoraion-none{
-  text-decoration: none;
-}
-.fs-10{
-  font-size: 10px;
-}
-.fs-12{
-  font-size: 12px;
-}
-.fs-14{
-  font-size: 14px;
-}
-.fs-16{
-  font-size: 16px;
-}
-.fs-17{
-  font-size: 17px;
-}
-.fs-18{
-  font-size: 20px;
-}
-.fs-20{
-  font-size: 22px;
-}
-.fs-22{
-  font-size: 24px !important;
-}
-.pt-50{
-  padding-top: 50px;
-}
-.pb-50{
-  padding-bottom: 50px;
-}
-.mt-50{
-  margin-top: 50px;
-}
-.mb-50{
-  margin-bottom: 50px;
-}
-.mt-100{
-  margin-top: 100px;
-}
-.mb-100{
-  margin-bottom: 100px;
-}
-.white-custom-color{
-  color: white;
-}
-.title-wrapper {
-  perspective: 1000px; /* 👈 3D effect */
-}
-
-.line {
-  display: block;
-  transform-style: preserve-3d;
-}
- 
-@media (min-width: 1600) {
-  .custom-container {
-    max-width: 1643px;
-    margin: auto;
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
   }
-}
+  .list-style-none{
+    list-style: none;
+  }
+  .text-decoraion-none{
+    text-decoration: none;
+  }
+  .fs-10{
+    font-size: 10px;
+  }
+  .fs-12{
+    font-size: 12px;
+  }
+  .fs-14{
+    font-size: 14px;
+  }
+  .fs-16{
+    font-size: 16px;
+  }
+  .fs-17{
+    font-size: 17px;
+  }
+  .fs-18{
+    font-size: 20px;
+  }
+  .fs-20{
+    font-size: 22px;
+  }
+  .fs-22{
+    font-size: 24px !important;
+  }
+  .pt-50{
+    padding-top: 50px;
+  }
+  .pb-50{
+    padding-bottom: 50px;
+  }
+  .mt-50{
+    margin-top: 50px;
+  }
+  .mb-50{
+    margin-bottom: 50px;
+  }
+  .mt-100{
+    margin-top: 100px;
+  }
+  .mb-100{
+    margin-bottom: 100px;
+  }
+  .white-custom-color{
+    color: white;
+  }
+  .title-wrapper {
+    perspective: 1000px; /* 👈 3D effect */
+  }
 
- 
-.userbox{
-  overflow: hidden !important; 
-  height: 200vh;
-  position: relative;
-}
-.hh {
-  position: relative;
-  /* height: 200vh; */
-}
-
- 
-
-.plus-box {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  .line {
+    display: block;
+    transform-style: preserve-3d;
+  }
   
-  background: black;
-  color: white;
-  border-radius: 50%;
-  padding: 15px;
+  @media (min-width: 1600) {
+    .custom-container {
+      max-width: 1643px;
+      margin: auto;
+    }
+  }
 
-  transition: transform 0.2s linear;
-}
-.box{
-  position: absolute;
-  left: 50%;
-  top: 61%;
-  width: 300;
-  height: 300px;
-  border-radius: 9px;
-  display: flex; 
-  background: black ;
-  color: white;
+  
+  .userbox{
+    overflow: hidden !important; 
+    height: 250vh;
+    position: relative;
+    
+  }
+  .hh {
+    position: relative;
+    /* height: 200vh; */
+  }
 
-  transform: translate(-50%, -50%);
-  transition: transform 0.2s linear;
-}
+  
 
-/* center box */
-.box:nth-child(3){
-  z-index: 5;
-}
+  .plus-box {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background: black;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
 
-
-@media (max-width: 1197px) {
-
-
-    .box{
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-
-    width: 300px;
+    transition: transform 0.2s linear;
+  }
+  .box{
+    position: absolute;
+    left: 50%;
+    top: 61%;
+    width: 300;
     height: 300px;
-    flex: 0 0 45%;
-  }
-    .boxes{
-    position: static !important;
-    transform: none !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 20px;
-  }
-}
+    border-radius: 9px;
+    display: flex; 
+    background: black ;
+    color: white;
 
-@media (max-width: 480px) {
-  .box{ 
-    margin: 10px;
-    width: 94% !important;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s linear;
   }
-     .boxes{
-    position: static !important;
-    transform: none !important;
-    display: block !important;   
-    gap: 20px;
+
+  /* center box */
+  .box:nth-child(3){
+    z-index: 5;
   }
-}
+
+
+  @media (max-width: 1197px) {
+
+
+      .box{
+      position: relative !important;
+      left: auto !important;
+      top: auto !important;
+      transform: none !important;
+
+      width: 300px;
+      height: 300px;
+      flex: 0 0 45%;
+    }
+      .boxes{
+      position: static !important;
+      transform: none !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .box{ 
+      margin: 10px;
+      width: 94% !important;
+    }
+      .boxes{
+      position: static !important;
+      transform: none !important;
+      display: block !important;   
+      gap: 20px;
+    }
+  }

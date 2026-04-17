@@ -123,7 +123,7 @@
   width: 25%; 
   border-radius: 21px;
   margin: auto;
-  position: sticky; 
+  position: relative !important; 
   top: 100px; 
     height: calc(638px - 100px); 
 }
@@ -190,7 +190,7 @@
   transform: translate(-50%, 40vh);
 } */
 
-  .ThreePostion {
+  /* .ThreePostion {
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -208,27 +208,85 @@
     justify-content: center;
     border-radius: 50%;
   }
-  
+   */
+
+
+
+/* .ThreePostion {
+  position: absolute;
+  left: 50%;
+  bottom: 0; 
+  transform: translate(-50%, 0); 
+
+  background-color: black;
+  color: white;
+
+  height: 50px;
+  width: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%; 
+}
  
- 
+  */
   
+
+  /* .ThreePostion {
+  position: fixed;   
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(1);
+
+  height: 60px;
+  width: 60px;
+
+  border-radius: 50%;
+  background: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.ThreePostion {
+  position: absolute;   /* 👈 start me box ke andar */
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .ThreePostion.active {
   width: 200vw;
   height: 200vw;
 }
 
 /* 👇 icon FIX rahega */
+/* .icon {
+  position: absolute; 
+  z-index: 2;
+ 
+} */
+
 .icon {
   position: absolute;
-  z-index: 2;
-
-  transform: scale(1); /* always same size */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* 👇 optional (zoom ke baad icon hide karna hai) */
-.ThreePostion.active .icon {
+/* .ThreePostion.active .icon {
   opacity: 0;
-}
+} */
  @media (max-width: 1197px) {
 
   .MainServices{ 

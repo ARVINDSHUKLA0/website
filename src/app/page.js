@@ -65,97 +65,6 @@ export default function Home() {
 
   }, []);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-
-  //     const boxes = document.querySelectorAll(".box");
-
-  //     // 👇 MOBILE → sab reset karo
-  //     if (window.innerWidth < 1197) {
-  //       boxes.forEach(box => {
-  //         box.style.transform = "none";
-  //       });
-  //       return;
-  //     }
-
-  //     const container = document.querySelector(".boxes");
-  //     if (!container || boxes.length < 5) return;
-
-  //     const rect = container.getBoundingClientRect();
-
-  //     const start = window.innerHeight * 0.8;
-  //     const end = window.innerHeight * 0.2;
-
-  //     let progress = (start - rect.top) / (start - end);
-  //     progress = Math.max(0, Math.min(1, progress));
-
-  //     const gap = 250;
-
-  //     boxes[0].style.transform = `translate(calc(-50% - ${gap * 2 * progress}px), -50%)`;
-  //     boxes[1].style.transform = `translate(calc(-50% - ${gap * progress}px), -50%)`;
-  //     boxes[2].style.transform = `translate(-50%, -50%)`;
-  //     boxes[3].style.transform = `translate(calc(-50% + ${gap * progress}px), -50%)`;
-  //     boxes[4].style.transform = `translate(calc(-50% + ${gap * 2 * progress}px), -50%)`;
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   window.addEventListener("resize", handleScroll); // 👈 important
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //     window.removeEventListener("resize", handleScroll);
-  //   };
-  // }, []);
-
-
-  //   useEffect(() => {
-  //   const handleScroll = () => {
-
-
-  //     const boxes = document.querySelectorAll(".box");
-
-
-  //     // mobile reset
-  //     if (window.innerWidth < 1197) {
-  //       boxes.forEach(box => {
-  //         box.style.transform = "none";
-  //       });
-  //       return;
-  //     }
-
-  //     const container = document.querySelector(".boxes");
-  //     if (!container || boxes.length === 0) return;
-
-  //     const rect = container.getBoundingClientRect();
-
-  //     const start = window.innerHeight * 0.8;
-  //     const end = window.innerHeight * 0.2;
-
-  //     let progress = (start - rect.top) / (start - end);
-  //     progress = Math.max(0, Math.min(1, progress));
-
-  //     const gap = 250;
-
-  //     // 👇 center index auto calculate
-  //     const centerIndex = Math.floor(boxes.length / 2);
-
-  //     boxes.forEach((box, i) => {
-  //       const offset = i - centerIndex;
-
-  //       box.style.transform = `translate(calc(-50% + ${offset * gap * progress}px), -50%)`;
-  //     });
-
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   window.addEventListener("resize", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //     window.removeEventListener("resize", handleScroll);
-  //   };
-  // }, []);
-
   useEffect(() => {
     const handleScroll = () => {
 
@@ -220,6 +129,35 @@ export default function Home() {
 
   const threeRef = useRef();
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!threeRef.current) return;
+
+  //     const section = document.querySelector(".userbox");
+  //     if (!section) return;
+
+  //     const rect = section.getBoundingClientRect();
+
+  //     const start = window.innerHeight;   // section enter
+  //     const end = -rect.height;           // section exit
+
+  //     let progress = (start - rect.top) / (start - end);
+  //     progress = Math.max(0, Math.min(1, progress));
+
+  //     // 👇 smooth move based on section
+  //     const moveY = progress * 500; // adjust value
+
+  //     threeRef.current.style.transform = `translate(-50%, ${moveY}px)`;
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+
+  
   useEffect(() => {
     const handleScroll = () => {
       if (!threeRef.current) return;
@@ -229,26 +167,36 @@ export default function Home() {
 
       const rect = section.getBoundingClientRect();
 
-      const start = window.innerHeight;   // section enter
-      const end = -rect.height;           // section exit
+      const start = window.innerHeight;
+      const end = -rect.height;
 
       let progress = (start - rect.top) / (start - end);
       progress = Math.max(0, Math.min(1, progress));
 
-      // 👇 smooth move based on section
-      const moveY = progress * 500; // adjust value
+      let moveY = 0;
+      let scale = 1;
 
-      threeRef.current.style.transform = `translate(-50%, ${moveY}px)`;
+      const stopPoint = 400;
+
+      if (progress < 0.6) {
+        moveY = progress * stopPoint;
+      } else {
+        moveY = stopPoint;
+
+        let zoomProgress = (progress - 0.6) / 0.4;
+        zoomProgress = Math.max(0, Math.min(1, zoomProgress));
+
+        scale = 1 + zoomProgress * 590;
+      }
+
+      threeRef.current.style.transform =
+        `translate(-50%, ${moveY}px) scale(${scale})`;
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
- 
 
   const DataStrogre = [
     { id: "1", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
@@ -457,14 +405,17 @@ export default function Home() {
               ))
             }
           </div>
-          {/* <div className={styles.ThreePostion}>
-            helo
-          </div> */}
           <div ref={threeRef} className={` ms-1 ${styles.ThreePostion} ${active ? styles.active : ""}`}>
-            <img  src="/assets/img/addicon.png" width={20}/>
+            {/* <img src="/assets/img/addicon.png" width={20} /> */}
+
+            <div className={`${styles.icon}`}>
+              {/* <img className="img-fluid" src="/assets/img/plus.svg" width={120}/> */}
+              <ZoomPlus/>
+            </div>
+            
           </div>
 
-           
+
 
         </div>
 
