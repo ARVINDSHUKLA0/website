@@ -8,7 +8,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     return (
         <>
-            <div className='navbar-main px-2 mt-4'>
+            <div className='navbar-main px-md-2 px-0 mt-4'>
                 <div className='container-fluid custom-container'>
                     <div className='d-flex justify-content-between'>
                         <div className='custom-border'>

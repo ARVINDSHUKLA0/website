@@ -167,7 +167,7 @@ export default function Home() {
           </video>
           <Navbar />
           <div className="px-2">
-            <div className="container-fluid custom-container">
+            <div className="container-fluid custom-container p-0 pb-4">
               <div className={styles.customPostion}>
                 <div className={`row d-flex justify-content-center align-items-end g-3 ${styles.customWidthText}`}>
                   <div className="col-lg-6 col-md-12 col-sm-12 col-12">
@@ -203,7 +203,7 @@ export default function Home() {
 
         <div className="container-fluid custom-container">
           <div className="row m-0">
-            <div className="col-12 col-lg-6 offset-lg-6">
+            <div className="col-12 col-lg-6 offset-lg-6 p-0">
               <div className="mt-100 mb-100" style={{ perspective: "1000px" }}>
                 <h2 ref={textRef} className={`${styles.customFontSize} title-wrapper`}>
                   We provide brilliant idea to grow the startup agency with your sharp brand.
