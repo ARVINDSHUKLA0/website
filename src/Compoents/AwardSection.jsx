@@ -100,7 +100,7 @@ export default function AwardSection({ textRef }) {
         }
       `}</style>
 
-      <section className="awards-section mt-5">
+      <section className="awards-section mt-5 rounded-3">
         <div className="container-fluid px-0">
           <div className="row g-0">
 

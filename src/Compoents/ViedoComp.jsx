@@ -8,7 +8,7 @@ const ViedoComp = () => {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
       
       <section 
-        className="position-relative text-white d-flex align-items-center overflow-hidden"
+        className="position-relative text-white d-flex align-items-center overflow-hidden rounded-3"
         style={{
           minHeight: '600px'
         }}
