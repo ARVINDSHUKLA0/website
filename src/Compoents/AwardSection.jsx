@@ -18,7 +18,7 @@ export default function AwardSection() {
         @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&family=Barlow+Condensed:wght@700&display=swap');
 
         .awards-section {
-          background: #111;
+          background: black;
           color: #fff;
           padding: 80px 40px 100px;
           font-family: 'Barlow', sans-serif;
@@ -121,7 +121,7 @@ export default function AwardSection() {
                 {awards.map((award, i) => (
                   <div className="award-row" key={i}>
                     <span className="award-platform">{award.platform}</span>
-                    <span className="award-description">{award.description}</span>
+                    <span className="award-description text-center">{award.description}</span>
                     <span className="award-year">{award.year}</span>
                   </div>
                 ))}

@@ -14,7 +14,7 @@ const Navbar = () => {
                         <div className='custom-border'>
                             <div className=' d-flex justify-content-between align-items-center w-100'>
                                 <div>
-                                    <img src="/assets/img/light-logo.png" width={100} alt="" />
+                                    <img src="/assets/img/logoWhite.png" width={100} alt="" />
                                 </div>
                                 <div className={`ms-5 side-menu ${open ? "active" : ""}`}>
                                     <div className='d-xl-none d-block text-end mb-2'>
