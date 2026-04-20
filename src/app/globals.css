@@ -69,10 +69,7 @@
       margin: auto;
     }
       
-  .userbox{
-    overflow: hidden !important; 
-    height: 100vh !important;   
-  }
+  
   }
 
   
@@ -123,6 +120,11 @@
       justify-content: center !important;
       gap: 20px;
     }
+     .userbox{
+    overflow: hidden !important; 
+    height: fit-content !important;   
+   padding-bottom: 100px;
+  }
   }
 
   @media (max-width: 480px) {
@@ -136,4 +138,12 @@
       display: block !important;   
       gap: 20px;
     }
+ 
+  }
+  @media (min-width: 1600px) {
+        .userbox{
+    overflow: hidden !important; 
+    height: fit-content !important;   
+   padding-bottom: 15vh;
+  }
   }

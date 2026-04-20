@@ -184,7 +184,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="footer-bottom d-flex align-items-center justify-content-between">
-          <p className="mb-0">
+          <p className="mb-0  m-auto ">
             © 2026 <Link href="#">RavexTheme</Link>. All right reserved
           </p>
    

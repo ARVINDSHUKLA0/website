@@ -112,14 +112,14 @@ const ViedoComp = () => {
         @media (max-width: 768px) {
           section {
             min-height: 500px !important;
-            padding: 60px 20px !important;
+            // padding: 60px 20px !important;
           }
         }
 
         @media (max-width: 576px) {
-          section {
+          section { 
             min-height: 450px !important;
-            padding: 40px 15px !important;
+         
           }
         }
       `}</style>

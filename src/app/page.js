@@ -354,11 +354,6 @@ export default function Home() {
         <SliderBrand />
         </div>
 
-
-
-
-
-
       </section>
       <Footer />
 

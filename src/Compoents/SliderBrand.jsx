@@ -101,7 +101,7 @@ const SliderBrand = () => {
       {
         breakpoint: 576,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false,
         }
@@ -124,7 +124,7 @@ const SliderBrand = () => {
   
   return (
     <>
-      <section className='Trusted-By-Leading-Wrapper mt-5 py-5 mb-5' style={{padding:'0px 206px',backgroundColor:"black"}}>
+      <section className='Trusted-By-Leading-Wrapper mt-5 py-5 mb-5' style={{padding:'0px 20px',backgroundColor:"black"}}>
         <div className="container-fluid p-0">
           <div className='text-center'>
             <h3 className="fs-30 text-white fw-bold Playfair-font mb-5">Trusted by leading brands and startups</h3>

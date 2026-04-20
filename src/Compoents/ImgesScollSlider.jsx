@@ -26,7 +26,7 @@ const ImgesScollSlider = () => {
   }, [scrollYProgress]);
 
   return (
-    <section ref={scrollRef} className="scroll-section position-relative pb-100">
+    <div ref={scrollRef} className="scroll-section position-relative pb-100">
       <div className="container-fluid">
 
         {/* TOP TEXT */}
@@ -43,7 +43,7 @@ const ImgesScollSlider = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 
