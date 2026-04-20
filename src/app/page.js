@@ -13,6 +13,7 @@ import ViedoComp from "@/Compoents/ViedoComp";
 import SliderBrand from "@/Compoents/SliderBrand";
 import Footer from "@/Compoents/Footer";
 import AwardSection from "@/Compoents/AwardSection";
+import WaveTransition from "@/Compoents/WaveTransition";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -69,7 +70,7 @@ export default function Home() {
 
     gsap.fromTo(textRef.current, {}, {});
 
-    gsap.fromTo(textRefTwo.current, {}, {}); 
+    gsap.fromTo(textRefTwo.current, {}, {});
 
   }, []);
 
@@ -135,6 +136,8 @@ export default function Home() {
     };
   }, []);
 
+
+
   const DataStrogre = [
     { id: "1", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
     { id: "2", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
@@ -157,9 +160,11 @@ export default function Home() {
     { id: 1, name: "Awwwards", para: " 3x creative agency of the day", years: "2021" },
     { id: 1, name: "Awwwards", para: " 3x creative agency of the day", years: "2021" },
   ]
+
   const sectionRef = useRef();
   return (
     <>
+      
       <section className={styles.page}>
         <div className={`${styles.MainBannerWarper} position-relative`}>
           <video autoPlay muted loop playsInline>
@@ -287,12 +292,15 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="row m-0">
+
+            <div className="row m-0 ">
               {
                 DataStrogre.map((DataValue, index) => (
 
-                  <div key={index} className="col-lg-6 col-md-6 col-sm-12 col-12 my-4">
+                  <div key={index} className="col-lg-6 col-md-6 col-sm-12 col-12 my-4 ">
+
                     <img className="img-fluid rounded-4" src={DataValue.imegs} />
+
                     <div className="py-3 ps-1">
                       <p className="m-0 fs-16 fw-bold">{DataValue.txtOne}</p>
                       <p className="m-0 fs-16 fw-bold">{DataValue.txtTwo}</p>
@@ -303,6 +311,8 @@ export default function Home() {
                 ))
               }
             </div>
+
+
           </div>
           <div className="row m-0 hh">
             <div className="col-12 col-lg-6 ">
@@ -353,14 +363,15 @@ export default function Home() {
           </div>
         </div>
 
-       <div className="container-fluid custom-container">
-        <ViedoComp />
-        <AwardSection  textRef={textRefThree}  />
-        <SliderBrand />
+        <div className="container-fluid custom-container">
+          <ViedoComp />
+          <AwardSection textRef={textRefThree} />
+          <SliderBrand />
         </div>
 
       </section>
-      <Footer textRef={textRefFour}/>
+      <Footer textRef={textRefFour} />
+          <WaveTransition />
 
     </>
   );
