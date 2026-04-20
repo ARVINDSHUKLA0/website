@@ -21,6 +21,8 @@ export default function Home() {
   const [active, setActive] = useState(false);
   const textRef = useRef();
   const textRefTwo = useRef();
+  const textRefThree = useRef();
+  const textRefFour = useRef();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -52,8 +54,11 @@ export default function Home() {
       };
 
       // 👇 dono pe apply
-      animateText(textRef);
-      animateText(textRefTwo);
+      // animateText(textRef);
+      // animateText(textRefTwo);
+      // animateText(textRefThree);
+      // animateText(textRefFour);
+      [textRef, textRefTwo, textRefThree, textRefFour].forEach(animateText);
 
     });
 
@@ -64,7 +69,7 @@ export default function Home() {
 
     gsap.fromTo(textRef.current, {}, {});
 
-    gsap.fromTo(textRefTwo.current, {}, {});
+    gsap.fromTo(textRefTwo.current, {}, {}); 
 
   }, []);
 
@@ -350,12 +355,12 @@ export default function Home() {
 
        <div className="container-fluid custom-container">
         <ViedoComp />
-        <AwardSection  />
+        <AwardSection  textRef={textRefThree}  />
         <SliderBrand />
         </div>
 
       </section>
-      <Footer />
+      <Footer textRef={textRefFour}/>
 
     </>
   );

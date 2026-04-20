@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({textRef}) {
   return (
     <>
       <style>{`
@@ -126,7 +126,7 @@ export default function Footer() {
 
               {/* Left: Headline */}
               <div className="col-12 col-md-5 d-flex flex-column justify-content-between pe-md-4 mb-4 mb-md-0">
-                <h2 className="footer-headline">
+                <h2 ref={textRef} className="footer-headline">
                   Let's start a<br />
                   great work right<br />
                   now

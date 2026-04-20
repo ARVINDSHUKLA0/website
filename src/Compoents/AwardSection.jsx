@@ -1,6 +1,6 @@
 "use client";
 
-export default function AwardSection() {
+export default function AwardSection({ textRef }) {
   const awards = [
     { platform: "Awwwards", description: "3x creative agency of the day", year: "2023" },
     { platform: "Envato", description: "1x agency of the year", year: "2010" },
@@ -106,7 +106,7 @@ export default function AwardSection() {
 
             {/* Headline - Left Half */}
             <div className="col-12 col-md-6">
-              <h2 className="awards-headline">
+              <h2  ref={textRef}  className="awards-headline">
                 Making work that wins awards is not our destination. It is a starting point
               </h2>
             </div>
