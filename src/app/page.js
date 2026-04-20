@@ -221,7 +221,7 @@ export default function Home() {
             </div>
             <div className="col-lg-5 ps-lg-5 col-md-6 col-sm-12 col-12 d-flex justify-content-center align-items-end">
               <div className={`${styles.imageBox}`}>
-                <img className="img-fluid" src="/assets/img/pet.jpg"></img>
+                <img className="img-fluid rounded-4" src="/assets/img/pet.jpg"></img>
 
               </div>
               <div className="d-sm-block d-none">
@@ -250,7 +250,7 @@ export default function Home() {
           </div>
           <ImgesScollSlider />
         </div>
-        <div className="container-fluid custom-container" >
+        <div className="container-fluid custom-containe p-0" >
           <div className="mt-50 pt-5">
             <div className="row  m-0">
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -307,7 +307,7 @@ export default function Home() {
           <div className="row m-0 hh">
             <div className="col-12 col-lg-6 ">
               <div className="mt-100 mb-100" style={{ perspective: "1000px" }}>
-                <h2 ref={textRefTwo} className={`${styles.customFontSize} title-wrapper`}>
+                <h2 ref={textRefTwo} className={`${styles.customFontSize} title-wrapper `}>
                   We think out of the box for tailor-made service      </h2>
               </div>
             </div>
