@@ -1,0 +1,57 @@
+/* .black-Navbar{
+    background-color: black !important;
+    padding: 20px 0px;
+    position: relative;
+    top: -30px;
+}
+.about-imges-founder{
+    height: 450px;
+    width: 450px ;
+    border: 1px dotted black;
+    padding: 11px;
+    overflow: hidden; 
+    border-radius: 21px;
+}
+.about-imges-founder img{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   object-position: top;
+   border-radius: 21px;
+} */
+
+
+.black-Navbar {
+    background-color: black !important;
+    padding: 20px 0px;
+    position: relative;
+    top: 0; 
+}
+
+/* IMAGE WRAPPER */
+.about-imges-founder {
+    width: 100%;
+    max-width: 450px;   /* desktop pe same look */
+    height: auto;       /* 🔥 fixed height hata diya */
+    aspect-ratio: 1/1;  /* square maintain karega */
+    border: 1px dotted black;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: auto;       /* center on mobile */
+}
+
+.about-imges-founder img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: top;
+   border-radius: 20px;
+}
+
+/* TEXT FIX */
+@media (max-width: 991px) {
+    .me-5 {
+        margin-right: 0 !important; /* 🔥 mobile fix */
+    }
+}

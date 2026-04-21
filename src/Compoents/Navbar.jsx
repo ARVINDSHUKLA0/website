@@ -4,12 +4,12 @@ import Link from 'next/link'
 import '../CompoentsStyle/Navbar.css'
 import React, { useState } from 'react'
 
-const Navbar = () => {
+const Navbar = ({ theme = "dark", className = "" }) => {
     const [open, setOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     return (
-        <>
-            <div className='navbar-main px-md-2 px-0 mt-4'>
+        <> 
+            <div className={`navbar-main px-md-2 px-0 mt-4 ${className}`}>
                 <div className='container-fluid custom-container'>
                     <div className='d-flex justify-content-between'>
                         <div className='custom-border'>
@@ -23,15 +23,11 @@ const Navbar = () => {
                                     </div>
                                     <ul className='m-0 p-0 custom-flex-dilapy gap-5'>
                                         <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none fs-16 text-capitalize white-custom-color' href="#">home</Link>
+                                            <Link className='text-decoraion-none fs-16 text-capitalize white-custom-color' href="/">home</Link>
                                         </li>
                                         <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">about us</Link>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="/about">about us</Link>
                                         </li>
-                                        {/* <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">service</Link>
-
-                                        </li> */}
                                         <li className={`list-style-none my-2 dropdown ${dropdownOpen ? "active" : ""}`}>
                                             <Link
                                                 onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -43,22 +39,22 @@ const Navbar = () => {
                                             </Link>
 
                                             <ul className='dropdown-menu-custom m-0 p-0'>
-                                                <li>
+                                                <li className='list-style-none'>
                                                     <Link href="#" className='dropdown-item'>Branding</Link>
                                                 </li>
-                                                <li>
+                                                <li className='list-style-none'>
                                                     <Link href="#" className='dropdown-item'>Product Design & Development</Link>
                                                 </li>
-                                                <li>
+                                                <li className='list-style-none'>
                                                     <Link href="#" className='dropdown-item'>Packaging Design</Link>
                                                 </li>
-                                                <li>
+                                                <li className='list-style-none'>
                                                     <Link href="#" className='dropdown-item'>Strategy</Link>
                                                 </li>
-                                                <li>
+                                                <li className='list-style-none'>
                                                     <Link href="#" className='dropdown-item'>Marketing & Content</Link>
                                                 </li>
-                                                <li>
+                                                <li className='list-style-none'>
                                                     <Link href="#" className='dropdown-item'>Pet Casting</Link>
                                                 </li>
                                             </ul>
@@ -66,7 +62,7 @@ const Navbar = () => {
                                         <li className='list-style-none my-2'>
                                             <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">blog</Link>
                                         </li>
-                                   
+
                                         <li className='list-style-none my-2'>
                                             <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">conact</Link>
                                         </li>

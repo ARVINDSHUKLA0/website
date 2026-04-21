@@ -114,24 +114,7 @@
         width: 80%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 .dropdown {
@@ -140,10 +123,10 @@
 
 .dropdown-menu-custom {
     position: absolute;
-    top: 49px;
+    top: 53px;
     left: -10px;
-    background: rgba(0, 0, 0, 0.342);
-    /* background-color: red; */
+    background: rgba(0, 0, 0, 0.342); 
+     
     padding: 10px 0;
     min-width: 200px;
     border-radius: 10px;
@@ -172,13 +155,11 @@
     font-size: 15px;
     transition: transform 0.3s ease;
 }
-
-/* rotate when active */
+ 
 .dropdown-icon.rotate {
     transform: rotate(180deg);
 }
-
-/* desktop hover */
+ 
 @media (min-width: 1197px) {
     .dropdown:hover .dropdown-menu-custom {
         opacity: 1;

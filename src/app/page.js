@@ -9,7 +9,7 @@ import SplitType from "split-type";
 import { motion, useScroll } from "framer-motion";
 import ImgesScollSlider from "@/Compoents/ImgesScollSlider";
 import Link from "next/link";
-import ViedoComp from "@/Compoents/ViedoComp";
+import ViedoComp from "@/Compoents/ViedoComp"; 
 import SliderBrand from "@/Compoents/SliderBrand";
 import Footer from "@/Compoents/Footer";
 import AwardSection from "@/Compoents/AwardSection";
@@ -18,7 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-export default function Home() {
+export default function Home() { 
   const [active, setActive] = useState(false);
   const textRef = useRef();
   const textRefTwo = useRef();
@@ -170,7 +170,7 @@ export default function Home() {
           <video autoPlay muted loop playsInline>
             <source src="/assets/viedo/puppy.mp4" type="video/mp4" />
           </video>
-          <Navbar />
+          <Navbar theme="dark" />
           <div className="px-2">
             <div className="container-fluid custom-container p-0 pb-4">
               <div className={styles.customPostion}>
