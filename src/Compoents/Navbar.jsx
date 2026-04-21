@@ -6,6 +6,7 @@ import React, { useState } from 'react'
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
     return (
         <>
             <div className='navbar-main px-md-2 px-0 mt-4'>
@@ -18,7 +19,7 @@ const Navbar = () => {
                                 </div>
                                 <div className={`ms-5 side-menu ${open ? "active" : ""}`}>
                                     <div className='d-xl-none d-block text-end mb-2'>
-                                        <i  onClick={() => setOpen(!open)} className="fa-solid fa-xmark text-white fs-18"></i>
+                                        <i onClick={() => setOpen(!open)} className="fa-solid fa-xmark text-white fs-18"></i>
                                     </div>
                                     <ul className='m-0 p-0 custom-flex-dilapy gap-5'>
                                         <li className='list-style-none my-2'>
@@ -27,8 +28,40 @@ const Navbar = () => {
                                         <li className='list-style-none my-2'>
                                             <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">about us</Link>
                                         </li>
-                                        <li className='list-style-none my-2'>
+                                        {/* <li className='list-style-none my-2'>
                                             <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">service</Link>
+
+                                        </li> */}
+                                        <li className={`list-style-none my-2 dropdown ${dropdownOpen ? "active" : ""}`}>
+                                            <Link
+                                                onClick={() => setDropdownOpen(!dropdownOpen)}
+                                                className='text-decoraion-none text-capitalize fs-16 white-custom-color'
+                                                href="#"
+                                            >
+                                                service
+                                                <i className={`fa-solid fa-angle-down dropdown-icon ms-2 ${dropdownOpen ? "rotate" : ""}`}></i>
+                                            </Link>
+
+                                            <ul className='dropdown-menu-custom m-0 p-0'>
+                                                <li>
+                                                    <Link href="#" className='dropdown-item'>Branding</Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="#" className='dropdown-item'>Product Design & Development</Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="#" className='dropdown-item'>Packaging Design</Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="#" className='dropdown-item'>Strategy</Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="#" className='dropdown-item'>Marketing & Content</Link>
+                                                </li>
+                                                <li>
+                                                    <Link href="#" className='dropdown-item'>Pet Casting</Link>
+                                                </li>
+                                            </ul>
                                         </li>
                                         <li className='list-style-none my-2'>
                                             <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">blog</Link>
