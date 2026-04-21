@@ -1,31 +1,8 @@
-/* .black-Navbar{
-    background-color: black !important;
-    padding: 20px 0px;
-    position: relative;
-    top: -30px;
-}
-.about-imges-founder{
-    height: 450px;
-    width: 450px ;
-    border: 1px dotted black;
-    padding: 11px;
-    overflow: hidden; 
-    border-radius: 21px;
-}
-.about-imges-founder img{
-   height: 100%;
-   width: 100%;
-   object-fit: cover;
-   object-position: top;
-   border-radius: 21px;
-} */
-
-
 .black-Navbar {
     background-color: black !important;
     padding: 20px 0px;
     position: relative;
-    top: 0; 
+    top: -30px; 
 }
 
 /* IMAGE WRAPPER */
