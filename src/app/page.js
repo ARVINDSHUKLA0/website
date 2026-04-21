@@ -226,7 +226,7 @@ export default function Home() {
             </div>
             <div className="col-lg-5 ps-lg-5 col-md-6 col-sm-12 col-12 d-flex justify-content-center align-items-end">
               <div className={`${styles.imageBox}`}>
-                <img className="img-fluid rounded-4" src="/assets/img/pet.jpg"></img>
+                <img className="img-fluid rounded-4" src="/assets/img/founder.webp"></img>
 
               </div>
               <div className="d-sm-block d-none">

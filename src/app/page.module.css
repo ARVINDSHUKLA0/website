@@ -39,13 +39,14 @@
   width: 350px;
   height: 350px;
   overflow: hidden;
-  border-radius: 0 0 100% 0
+  border-radius: 0 0 90% 0
 }
 
 .imageBox img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .ImagesHeight {
@@ -194,7 +195,7 @@
   .imageBox img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; 
   }
 }
  
