@@ -50,8 +50,8 @@
   object-position: center 40%;
 }
 
-.ImagesHeight {
-  height: 700px;
+.ImagesHeight { 
+  height: auto;
   width: 100%;
 }
 
