@@ -38,15 +38,16 @@
 .imageBox {
   width: 350px;
   height: 350px;
-  overflow: hidden;
-  border-radius: 0 0 90% 0
+  overflow: hidden; 
+  border-radius: 0 0 60% 0;
+  
 }
 
 .imageBox img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: center 40%;
 }
 
 .ImagesHeight {
@@ -57,8 +58,7 @@
 .ImagesHeight img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;  
 }
 
 .CustomFontBigSize {

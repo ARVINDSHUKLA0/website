@@ -66,9 +66,7 @@ const Navbar = () => {
                                         <li className='list-style-none my-2'>
                                             <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">blog</Link>
                                         </li>
-                                        <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">page</Link>
-                                        </li>
+                                   
                                         <li className='list-style-none my-2'>
                                             <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">conact</Link>
                                         </li>

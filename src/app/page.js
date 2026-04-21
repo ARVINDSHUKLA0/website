@@ -139,10 +139,10 @@ export default function Home() {
 
 
   const DataStrogre = [
-    { id: "1", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
-    { id: "2", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
-    { id: "3", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
-    { id: "4", imegs: "/assets/img/pet.jpg", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
+    { id: "1", imegs: "/assets/img/BrandCreation.webp", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
+    { id: "2", imegs: "/assets/img/ProductDesign.webp", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
+    { id: "3", imegs: "/assets/img/PackagingDesign .webp", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
+    { id: "4", imegs: "/assets/img/PetCasting.webp", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
   ]
   const dataServices = [
     { id: '1', ServicesImg: "/assets/img/icon-s-1.webp", name: "Branding" },
@@ -164,7 +164,7 @@ export default function Home() {
   const sectionRef = useRef();
   return (
     <>
-      
+
       <section className={styles.page}>
         <div className={`${styles.MainBannerWarper} position-relative`}>
           <video autoPlay muted loop playsInline>
@@ -255,12 +255,13 @@ export default function Home() {
           </div>
           <ImgesScollSlider />
         </div>
-        <div className="container-fluid custom-containe p-0" >
+
+        <div className="container-fluid custom-container p-0" >
           <div className="mt-50 pt-5">
             <div className="row  m-0">
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
                 <div>
-                  <img className="img-fluid rounded-4" src="/assets/img/pet.jpg" />
+                  <img className="img-fluid rounded-4" src="/assets/img/ProductDesign.webp" />
                 </div>
 
                 <div className="py-3 ps-1">
@@ -271,7 +272,7 @@ export default function Home() {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
                 <div>
-                  <img className="img-fluid rounded-4" src="/assets/img/pet.jpg" />
+                  <img className="img-fluid rounded-4" src="/assets/img/PetCasting.webp" />
                 </div>
                 <div className="py-3 ps-1">
                   <p className="mt-3 m-0 fs-16 fw-bold">Arrox Digital Agency HTML Template</p>
@@ -281,7 +282,7 @@ export default function Home() {
               </div>
               <div className="col-lg-12 col-md-12 col-sm-12 col-12">
                 <div className={`${styles.ImagesHeight}`}>
-                  <img className="img-fluid rounded-4" src="/assets/img/pet.jpg" />
+                  <img className="img-fluid rounded-4" src="/assets/img/bigImg.webp" />
                 </div>
                 <div className="py-3 ps-1">
                   <p className="mt-3 m-0 fs-16 fw-bold">Arrox Digital Agency HTML Template</p>
@@ -291,28 +292,24 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div>
 
-            <div className="row m-0 ">
-              {
-                DataStrogre.map((DataValue, index) => (
+          <div className="row m-0 ">
+            {
+              DataStrogre.map((DataValue, index) => (
 
-                  <div key={index} className="col-lg-6 col-md-6 col-sm-12 col-12 my-4 ">
+                <div key={index} className="col-lg-6 col-md-6 col-sm-12 col-12 my-4 ">
 
-                    <img className="img-fluid rounded-4" src={DataValue.imegs} />
+                  <img className="img-fluid rounded-4" src={DataValue.imegs} />
 
-                    <div className="py-3 ps-1">
-                      <p className="m-0 fs-16 fw-bold">{DataValue.txtOne}</p>
-                      <p className="m-0 fs-16 fw-bold">{DataValue.txtTwo}</p>
-                      <p className="m-0 fs-16 fw-bold">{DataValue.years}</p>
-                    </div>
+                  <div className="py-3 ps-1">
+                    <p className="m-0 fs-16 fw-bold">{DataValue.txtOne}</p>
+                    <p className="m-0 fs-16 fw-bold">{DataValue.txtTwo}</p>
+                    <p className="m-0 fs-16 fw-bold">{DataValue.years}</p>
                   </div>
+                </div>
 
-                ))
-              }
-            </div>
-
-
+              ))
+            }
           </div>
           <div className="row m-0 hh">
             <div className="col-12 col-lg-6 ">
@@ -371,7 +368,7 @@ export default function Home() {
 
       </section>
       <Footer textRef={textRefFour} />
-          <WaveTransition />
+      <WaveTransition />
 
     </>
   );
