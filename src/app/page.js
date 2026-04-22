@@ -139,10 +139,10 @@ export default function Home() {
 
 
   const DataStrogre = [
-    { id: "1", imegs: "/assets/img/BrandCreation.webp", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
-    { id: "2", imegs: "/assets/img/ProductDesign.webp", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
-    { id: "3", imegs: "/assets/img/PackagingDesign .webp", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
-    { id: "4", imegs: "/assets/img/PetCasting.webp", txtOne: "Lambax Nanak", txtTwo: "Strategy, Visual Identity, Re-branding", years: "(2022)" },
+    { id: "1", imegs: "/assets/img/BrandCreation.webp", txtOne: "Logo and Brand Creation", },
+    { id: "2", imegs: "/assets/img/ProductDesign.webp", txtOne: "Product Design and Development", },
+    { id: "3", imegs: "/assets/img/PackagingDesign .webp", txtOne: "Packaging Design and Production",  },
+    { id: "4", imegs: "/assets/img/PetCasting.webp", txtOne: "Pet Casting and Animal Talent", },
   ]
   const dataServices = [
     { id: '1', ServicesImg: "/assets/img/icon-s-1.webp", name: "Branding" },
@@ -207,7 +207,7 @@ export default function Home() {
         </div>
 
         <div className="container-fluid custom-container">
-          <div className="row m-0">
+          <div className="row m-0 ">
             <div className="col-12 col-lg-6 offset-lg-6 p-0">
               <div className="mt-100 mb-100" style={{ perspective: "1000px" }}>
                 <h2 ref={textRef} className={`${styles.customFontSize} title-wrapper`}>
@@ -219,7 +219,7 @@ export default function Home() {
           <div className="mb-5">
             <h2>Built for the Pet Industry. Not Just Inspired by It</h2>
           </div>
-          <div className="row">
+          <div className="row align-items-start">
             <div className="col-lg-3 col-md-6 col-sm-12 col-12">
               <hr className="m-0 pb-3" />
               <p>who are you</p>
@@ -234,9 +234,17 @@ export default function Home() {
               </div>
             </div>
             <div className="col-lg-4 col-md-12 col-sm-12 col-12">
-              <p className="fs-18">Pawform Studio is a niche creative agency focused entirely on the pet ecosystem.</p>
+                   <h2 className='fw-bold fs-1 mb-sm-4 mb-2'>Neha Mishra Panjeta</h2>
+                       <div>
+                            <p>Neha Mishra Panjeta, a graduate of the <span className='fw-bold fs-16'>National Institute of Fashion Technology (NIFT)</span>, is the creative force behind Pawform Studio. With a strong foundation in design and a deeply rooted love for animals, she brings a unique perspective to the pet industry.
+                            </p>
+                            <p>Her connection with animals goes beyond interest—it’s instinctive, empathetic, and boundless. Much like the unconditional love pets offer, her passion for them knows no limits.</p>
+                            <p>Recognizing a gap in how pet brands were being built and communicated, Neha set out to merge her design expertise with her lifelong affection for animals. The result was Pawform Studio—a space where creativity meets compassion, and where design is shaped by genuine understanding of the pet world.
+                            </p>
+                        </div>
+              {/* <p className="fs-18">Pawform Studio is a niche creative agency focused entirely on the pet ecosystem.</p>
               <p className="fs-18">From emerging pet startups to established brands, we craft meaningful identities, thoughtful products, and impactful strategies tailored to the emotional bond between pets and people.</p>
-              <p className="fs-18">We don’t just design — we understand pet culture, behavior, and the evolving pet parent mindset.</p>
+              <p className="fs-18">We don’t just design — we understand pet culture, behavior, and the evolving pet parent mindset.</p> */}
             </div>
           </div>
         </div>
@@ -264,20 +272,16 @@ export default function Home() {
                   <img className="img-fluid rounded-4" src="/assets/img/ProductDesign.webp" />
                 </div>
 
-                <div className="py-3 ps-1">
-                  <p className="mt-3 m-0 fs-16 fw-bold">Arrox Digital Agency HTML Template</p>
-                  <p className="m-0 fs-16 fw-bold">WordPress, Themeforest</p>
-                  <p className="m-0 fs-16 fw-bold">(2025)</p>
+                <div className="pt-1 pb-4 ps-1">
+                  <p className="mt-3 m-0 fs-18 fw-bold">Product Design and Development</p>
                 </div>
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
                 <div>
                   <img className="img-fluid rounded-4" src="/assets/img/PetCasting.webp" />
                 </div>
-                <div className="py-3 ps-1">
-                  <p className="mt-3 m-0 fs-16 fw-bold">Arrox Digital Agency HTML Template</p>
-                  <p className="m-0 fs-16 fw-bold">WordPress, Themeforest</p>
-                  <p className="m-0 fs-16 fw-bold">(2025)</p>
+                <div className="pt-1 pb-4 ps-1">
+                  <p className="mt-3 m-0 fs-18 fw-bold">Pet Casting and Animal Talent</p>
                 </div>
               </div>
               <div className="col-lg-12 col-md-12 col-sm-12 col-12">
@@ -285,26 +289,22 @@ export default function Home() {
                   <img className="img-fluid rounded-4" src="/assets/img/bigImg.webp" />
                 </div>
                 <div className="py-3 ps-1">
-                  <p className="mt-3 m-0 fs-16 fw-bold">Arrox Digital Agency HTML Template</p>
-                  <p className="m-0 fs-16 fw-bold">WordPress, Themeforest</p>
-                  <p className="m-0 fs-16 fw-bold">(2025)</p>
+                  <p className="mt-3 m-0 fs-18 fw-bold">Website and App Development</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="row m-0 ">
+          <div className="row m-0 pt-3 ">
             {
               DataStrogre.map((DataValue, index) => (
 
-                <div key={index} className="col-lg-6 col-md-6 col-sm-12 col-12 my-4 ">
+                <div key={index} className="col-lg-6 col-md-6 col-sm-12 col-12  ">
 
                   <img className="img-fluid rounded-4" src={DataValue.imegs} />
 
-                  <div className="py-3 ps-1">
-                    <p className="m-0 fs-16 fw-bold">{DataValue.txtOne}</p>
-                    <p className="m-0 fs-16 fw-bold">{DataValue.txtTwo}</p>
-                    <p className="m-0 fs-16 fw-bold">{DataValue.years}</p>
+                  <div className=" py-4 ps-1">
+                    <p className="m-0 fs-18 fw-bold ">{DataValue.txtOne}</p> 
                   </div>
                 </div>
 
