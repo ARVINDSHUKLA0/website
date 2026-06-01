@@ -205,6 +205,48 @@ export default function Home() {
 
           </div>
         </div>
+      
+
+      
+        <div ref={sectionRef} className="mb-5 userbox" >
+          <div className={styles.MainServices}>
+            <div className="d-xl-block d-none">
+              <div className="d-flex justify-content-between align-items-center border border-dark m-3 p-3 rounded-4">
+                <div>
+                  <img className="img-fluid" src="/assets/img/logoBlack.png" width={90} />
+                </div>
+                <div>
+                  <Link href="#">
+                    <i className="fa-solid fa-bars fs-18 text-dark"></i>
+                  </Link>
+                </div>
+              </div>
+              <div className="pt-1 ps-3">
+                <h5>Capabilities</h5>
+                <h5>Explore</h5>
+              </div>
+            </div>
+            <div className="boxes">
+              {
+                dataServices.map((DataServicesItem, index) => (
+                  <div className="box mb-2   mb-md-0" key={index}>
+                    <div className="position-relative">
+                      <div className={`${styles.onePostion}`}>
+                        <img className="ms-2" src={DataServicesItem.ServicesImg} width={50} />
+                      </div>
+                      <div className={`${styles.twoPostion}`}>
+                        <h3>{DataServicesItem.name}</h3>
+                      </div>
+
+                    </div>
+
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+
 
         <div className="container-fluid custom-container">
           <div className="row m-0 ">
@@ -249,7 +291,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container-fluid custom-container">
+        {/* <div className="container-fluid custom-container">
           <div className=" row m-0 py-md-5 mb-5 py-3">
             <div className="col-lg-4 col-md-4 col-sm-6 col-6">
               <h6 className="fs-18">(Projects)</h6>
@@ -262,9 +304,9 @@ export default function Home() {
             </div>
           </div>
           <ImgesScollSlider />
-        </div>
+        </div> */}
 
-        <div className="container-fluid custom-container p-0" >
+        {/* <div className="container-fluid custom-container p-0" >
           <div className="mt-50 pt-5">
             <div className="row  m-0">
               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -319,52 +361,14 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div ref={sectionRef} className="mb-5 userbox" >
-          <div className={styles.MainServices}>
-            <div className="d-xl-block d-none">
-              <div className="d-flex justify-content-between align-items-center border border-dark m-3 p-3 rounded-4">
-                <div>
-                  <img className="img-fluid" src="/assets/img/logoBlack.png" width={90} />
-                </div>
-                <div>
-                  <Link href="#">
-                    <i className="fa-solid fa-bars fs-18 text-dark"></i>
-                  </Link>
-                </div>
-              </div>
-              <div className="pt-1 ps-3">
-                <h5>Capabilities</h5>
-                <h5>Explore</h5>
-              </div>
-            </div>
-            <div className="boxes">
-              {
-                dataServices.map((DataServicesItem, index) => (
-                  <div className="box mb-2   mb-md-0" key={index}>
-                    <div className="position-relative">
-                      <div className={`${styles.onePostion}`}>
-                        <img className="ms-2" src={DataServicesItem.ServicesImg} width={50} />
-                      </div>
-                      <div className={`${styles.twoPostion}`}>
-                        <h3>{DataServicesItem.name}</h3>
-                      </div>
 
-                    </div>
-
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-
-        <div className="container-fluid custom-container">
+        {/* <div className="container-fluid custom-container">
           <ViedoComp />
           <AwardSection textRef={textRefThree} />
           <SliderBrand />
-        </div>
+        </div> */}
 
       </section>
       <Footer textRef={textRefFour} />
