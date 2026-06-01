@@ -6,9 +6,9 @@ import React, { useState } from 'react'
 
 const Navbar = ({ theme = "dark", className = "" }) => {
     const [open, setOpen] = useState(false);
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+    // const [dropdownOpen, setDropdownOpen] = useState(false);
     return (
-        <> 
+        <>
             <div className={`navbar-main px-md-2 px-0 mt-4 ${className}`}>
                 <div className='container-fluid custom-container'>
                     <div className='d-flex justify-content-between'>
@@ -23,12 +23,16 @@ const Navbar = ({ theme = "dark", className = "" }) => {
                                     </div>
                                     <ul className='m-0 p-0 custom-flex-dilapy gap-5'>
                                         <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none fs-16 text-capitalize white-custom-color' href="/">home</Link>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">about us </Link>
                                         </li>
                                         <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="/about">about us</Link>
+                                            <Link className='text-decoraion-none fs-16 text-capitalize white-custom-color' href="/">Paw living </Link>
                                         </li>
-                                        <li className={`list-style-none my-2 dropdown ${dropdownOpen ? "active" : ""}`}>
+
+                                        <li className='list-style-none my-2'>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="/about">Paw Snuggle</Link>
+                                        </li>
+                                        {/* <li className={`list-style-none my-2 dropdown ${dropdownOpen ? "active" : ""}`}>
                                             <Link
                                                 onClick={() => setDropdownOpen(!dropdownOpen)}
                                                 className='text-decoraion-none text-capitalize fs-16 white-custom-color'
@@ -58,13 +62,26 @@ const Navbar = ({ theme = "dark", className = "" }) => {
                                                     <Link href="#" className='dropdown-item'>Pet Casting</Link>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li> */}
                                         <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">blog</Link>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Paw Groom </Link>
                                         </li>
 
                                         <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">conact</Link>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Paw Therapy</Link>
+                                        </li>
+                                        <li className='list-style-none my-2'>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Paw Galore</Link>
+                                        </li>
+                                        <li className='list-style-none my-2'>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Pet Casting </Link>
+                                        </li>
+                                        <li className='list-style-none my-2'>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Own a Pet </Link>
+                                        </li>
+
+                                        <li className='list-style-none my-2'>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">contact</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -73,7 +90,7 @@ const Navbar = ({ theme = "dark", className = "" }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='custom-disply-block'>
+                        {/* <div className='custom-disply-block'>
                             <div className='d-flex justify-content-between '>
                                 <div className='me-5 m-0'>
                                     <hr className='white-custom-color m-0 pb-2' />
@@ -88,7 +105,7 @@ const Navbar = ({ theme = "dark", className = "" }) => {
                                     <p className='m-0 white-custom-color fs-20 custom-line-height'>New York</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
