@@ -364,11 +364,11 @@ export default function Home() {
         </div> */}
 
 
-        {/* <div className="container-fluid custom-container">
+        <div className="container-fluid custom-container">
           <ViedoComp />
-          <AwardSection textRef={textRefThree} />
-          <SliderBrand />
-        </div> */}
+          {/* <AwardSection textRef={textRefThree} /> */}
+          {/* <SliderBrand /> */}
+        </div>
 
       </section>
       <Footer textRef={textRefFour} />
