@@ -64,16 +64,16 @@ const Navbar = ({ theme = "dark", className = "" }) => {
                                             </ul>
                                         </li> */}
                                         <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Paw Groom </Link>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Human x Pet March </Link>
                                         </li>
 
                                         <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Paw Therapy</Link>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Pet Casting </Link>
                                         </li>
                                         <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Paw Galore</Link>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Our Services</Link>
                                         </li>
-                                        <li className='list-style-none my-2'>
+                                        {/* <li className='list-style-none my-2'>
                                             <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Pet Casting </Link>
                                         </li>
                                         <li className='list-style-none my-2'>
@@ -82,7 +82,7 @@ const Navbar = ({ theme = "dark", className = "" }) => {
 
                                         <li className='list-style-none my-2'>
                                             <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">contact</Link>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </div>
                                 <div className='diplsy-none-icon'>
