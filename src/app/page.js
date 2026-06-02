@@ -357,16 +357,7 @@ export default function Home() {
             </div>
 
           </div>
-          <div className="row m-0">
-            <div className="col-lg-12 col-md-12 col-sm-12 col-12">
-              <img className="img-fluid rounded-2" src="/assets/img/dummypet.jpg"></img>
-            </div>
-            <div className="mt-3">
-              <h5 className="fw-bold ps-1">Lorem Dumy Content</h5>
-              <p className="ps-1">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's</p>
-            </div>
-
-          </div>
+ 
           <div className="row m-0 mt-3">
             {
               dataServicesTwo.map((CurrentData, index) => (
