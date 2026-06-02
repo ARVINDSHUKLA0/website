@@ -121,7 +121,12 @@
 
   }
 
-
+.black-Navbar {
+    background-color: black !important;
+    padding: 20px 0px;
+    position: relative;
+    top: -30px; 
+}
   .userbox {
     overflow: hidden !important;
     height: 100vh;

@@ -5,8 +5,7 @@ import '../CompoentsStyle/Navbar.css'
 import React, { useState } from 'react'
 
 const Navbar = ({ theme = "dark", className = "" }) => {
-    const [open, setOpen] = useState(false);
-    // const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [open, setOpen] = useState(false); 
     return (
         <>
             <div className={`navbar-main px-md-2 px-0 mt-4 ${className}`}>
@@ -23,7 +22,7 @@ const Navbar = ({ theme = "dark", className = "" }) => {
                                     </div>
                                     <ul className='m-0 p-0 custom-flex-dilapy gap-5'>
                                         <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">about us </Link>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="/about">about us </Link>
                                         </li>
                                         <li className='list-style-none my-2'>
                                             <Link className='text-decoraion-none fs-16 text-capitalize white-custom-color' href="/">Paw living </Link>
@@ -71,7 +70,7 @@ const Navbar = ({ theme = "dark", className = "" }) => {
                                             <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Pet Casting </Link>
                                         </li>
                                         <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Our Services</Link>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="/ourServices">Our Services</Link>
                                         </li>
                                         {/* <li className='list-style-none my-2'>
                                             <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Pet Casting </Link>

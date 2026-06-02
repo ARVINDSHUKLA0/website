@@ -175,17 +175,14 @@ export default function Home() {
     { id: "4", imegs: "/assets/img/PetCasting.webp", txtOne: "Pet Casting and Animal Talent", },
   ]
   const dataServices = [
-    { id: '1', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Branding", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
+    { id: '1', ServicesImg: "/assets/img/DOG-3.jpeg", hedaing: "Branding", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
     { id: '2', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Product Design & Development", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
     { id: '3', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Packaging Design", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
     { id: '4', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Strategy", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
   ]
   const leftData = dataServices.filter((_, index) => index % 2 === 0);
   const rightData = dataServices.filter((_, index) => index % 2 !== 0);
-  // const dataServicesTwo = [
-  //   { id: '1', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Branding", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
-  //   { id: '2', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Product Design & Development", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
-  // ]
+ 
 
 
   const BardTable = [
@@ -242,8 +239,8 @@ export default function Home() {
         </div>
 
 
-
-        {/* <div ref={sectionRef} className="mb-5 userbox" >
+{/* 
+        <div ref={sectionRef} className="mb-5 userbox" >
           <div className={styles.MainServices}>
             <div className="d-xl-block d-none">
               <div className="d-flex justify-content-between align-items-center border border-dark m-3 p-3 rounded-4">

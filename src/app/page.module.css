@@ -118,7 +118,7 @@
 
 
 
-.MainServices{  
+/* .MainServices{  
   height: 100vh;
   border: 2px solid black;
   width: 25%; 
@@ -127,10 +127,10 @@
   position: relative !important; 
   top: 100px; 
     height: calc(638px - 100px); 
-}
+} */
 
 /* center layout (desktop) */
-.boxes{
+/* .boxes{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -150,7 +150,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
  
  
