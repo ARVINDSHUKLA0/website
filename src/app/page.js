@@ -182,10 +182,10 @@ export default function Home() {
   ]
   const leftData = dataServices.filter((_, index) => index % 2 === 0);
   const rightData = dataServices.filter((_, index) => index % 2 !== 0);
-  const dataServicesTwo = [
-    { id: '1', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Branding", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
-    { id: '2', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Product Design & Development", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
-  ]
+  // const dataServicesTwo = [
+  //   { id: '1', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Branding", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
+  //   { id: '2', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Product Design & Development", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
+  // ]
 
 
   const BardTable = [
@@ -358,22 +358,7 @@ export default function Home() {
 
           </div>
  
-          <div className="row m-0 mt-3">
-            {
-              dataServicesTwo.map((CurrentData, index) => (
-                <div key={index} className="col-lg-6 col-md-6 col-sm-6 col-12">
-                  <div>
-                    <img className="img-fluid rounded-2" src={`${CurrentData.ServicesImg}`}></img>
-                  </div>
-                  <div className="mt-2">
-                    <h5 className="fw-bold ps-1">{CurrentData.hedaing}</h5>
-                    <p className="ps-1">{CurrentData.desc}</p>
-                  </div>
-                </div>
-              ))
-            }
-
-          </div>
+        
         </section>
 
 
