@@ -364,7 +364,7 @@ export default function Home() {
 
         <div className="container-fluid custom-container">
           <div className="row m-0  ">
-            <div className="col-12 col-lg-6 offset-lg-6 p-0">
+            <div className="col-6  m-auto">
               <div className="py-5" style={{ perspective: "1000px" }}>
                 <h2 ref={textRef} className={`${styles.customFontSize} title-wrapper`}>
                   Building a world where pets live beautifully, play freely, inspire creativity, and shine in the spotlight
@@ -377,8 +377,8 @@ export default function Home() {
           </div>
           <div className="row align-items-center mb-5 pb-3">
             <div className="col-lg- ps-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center align-items-end">
-              <div className={`${styles.imageBox}`}>
-                <img className="img-fluid rounded-4" src="/assets/img/founder-dummy.jpg"></img>
+              <div className={`${styles.imageBox} mb-2`}>
+                <img className="img-fluid rounded-4" src="/assets/img/founder-pet.jpeg"></img>
 
               </div>
             </div>
