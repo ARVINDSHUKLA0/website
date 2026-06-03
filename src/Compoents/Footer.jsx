@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function Footer({textRef}) {
+export default function Footer({ textRef }) {
   return (
     <>
       <style>{`
@@ -127,13 +127,11 @@ export default function Footer({textRef}) {
               {/* Left: Headline */}
               <div className="col-12 col-md-5 d-flex flex-column justify-content-between pe-md-4 mb-4 mb-md-0">
                 <h2 ref={textRef} className="footer-headline">
-                  Let's start a<br />
-                  great work right<br />
-                  now
+                  Discover the Pawform World
                 </h2>
-                <Link href="#" className="footer-cta-link">
+                {/* <Link href="#" className="footer-cta-link">
                   Let's get started now
-                </Link>
+                </Link> */}
               </div>
 
               {/* Right: Nav Columns */}
@@ -144,10 +142,10 @@ export default function Footer({textRef}) {
                   <div className="col-6 col-sm-4 footer-nav-col">
                     <h6>Company</h6>
                     <ul>
-                      <li><Link href="#">agency</Link></li>
+                      {/* <li><Link href="#">agency</Link></li>
                       <li><Link href="#">Solutions</Link></li>
                       <li><Link href="#">Community</Link></li>
-                      <li><Link href="#">Work</Link></li>
+                      <li><Link href="#">Work</Link></li> */}
                       <li><Link href="#">Contact</Link></li>
                     </ul>
                   </div>
@@ -157,11 +155,11 @@ export default function Footer({textRef}) {
                     <h6>Social</h6>
                     <ul>
                       <li><Link href="#">Facebook</Link></li>
-                      <li><Link href="#">Twitter</Link></li>
-                      <li><Link href="#">Dribbble</Link></li>
+                      {/* <li><Link href="#">Twitter</Link></li> */}
+                      {/* <li><Link href="#">Dribbble</Link></li> */}
                       <li><Link href="#">Instagram</Link></li>
-                      <li><Link href="#">Awwwards</Link></li>
-                      <li><Link href="#">YouTube</Link></li>
+                      {/* <li><Link href="#">Awwwards</Link></li> */}
+                      {/* <li><Link href="#">YouTube</Link></li> */}
                     </ul>
                   </div>
 
@@ -169,10 +167,9 @@ export default function Footer({textRef}) {
                   <div className="col-6 col-sm-4 footer-nav-col">
                     <h6>Office</h6>
                     <ul>
-                      <li><Link href="#">New York</Link></li>
-                      <li><Link href="#">Toronto</Link></li>
-                      <li><Link href="#">Berlin</Link></li>
-                      <li><Link href="#">London</Link></li>
+                      <li><Link href="#">
+                        C,26 Sector 65, Noida, Uttar Pradesh 201309
+                      </Link></li>
                     </ul>
                   </div>
 
@@ -187,7 +184,7 @@ export default function Footer({textRef}) {
           <p className="mb-0  m-auto ">
             © 2026 <Link href="#">RavexTheme</Link>. All right reserved
           </p>
-   
+
         </div>
       </footer>
     </>

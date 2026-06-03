@@ -176,13 +176,15 @@ export default function Home() {
   ]
   const dataServices = [
     { id: '1', ServicesImg: "/assets/img/service-1.jpeg", hedaing: "Paw Living", desc: "Thoughtfully designed pet furniture that feels at home in yours. From elegant loungers and cozy dens to stylish feeding stations, every piece blends comfort, function, and timeless design—creating beautiful spaces where pets belong without compromising your home's aesthetic." },
-    { id: '2', ServicesImg: "/assets/img/service-2.jpeg", hedaing: "Human × Pet Merch", desc: "iCelebrate the bond you share with your pet through thoughtfully designed lifestyle merchandise. Discover graphic tees, mugs, tote bags, accessories, and everyday essentials featuring playful pet-inspired designs that let you wear, carry, and share your love proudly." },
-    { id: '3', ServicesImg: "/assets/img/service-3.jpeg", hedaing: "Pet Casting", desc: "Need a pet to be the face of the next campaign? We represent dogs, cats, and companion animals for photoshoots, advertisements, brand collaborations, social media content, and commercial productions—connecting talented pets with exciting opportunities in the pet industry." },
-    { id: '4', ServicesImg: "/assets/img/service-4.jpeg", hedaing: "Paw Snuggle", desc: "A playful range of toys made for curious paws and happy tails. From cuddly plush friends to engaging enrichment toys, Paw Snuggle brings comfort, fun, and endless moments of joy—keeping pets entertained, stimulated, and ready for every adventure." },
+    { id: '2', ServicesImg: "/assets/img/service-4.jpeg", hedaing: "Paw Snuggle", desc: "A playful range of toys made for curious paws and happy tails. From cuddly plush friends to engaging enrichment toys, Paw Snuggle brings comfort, fun, and endless moments of joy—keeping pets entertained, stimulated, and ready for every adventure." },
+    { id: '3', ServicesImg: "/assets/img/service-2.jpeg", hedaing: "Human × Pet Merch", desc: "iCelebrate the bond you share with your pet through thoughtfully designed lifestyle merchandise. Discover graphic tees, mugs, tote bags, accessories, and everyday essentials featuring playful pet-inspired designs that let you wear, carry, and share your love proudly." },
+
+    { id: '4', ServicesImg: "/assets/img/service-3.jpeg", hedaing: "Pet Casting", desc: "Need a pet to be the face of the next campaign? We represent dogs, cats, and companion animals for photoshoots, advertisements, brand collaborations, social media content, and commercial productions—connecting talented pets with exciting opportunities in the pet industry." },
+
   ]
   const leftData = dataServices.filter((_, index) => index % 2 === 0);
   const rightData = dataServices.filter((_, index) => index % 2 !== 0);
- 
+
 
 
   const BardTable = [
@@ -209,12 +211,11 @@ export default function Home() {
                 <div className={`row d-flex justify-content-center align-items-end g-3 ${styles.customWidthText}`}>
                   <div className="col-lg-6 col-md-12 col-sm-12 col-12">
                     <h1 className={`text-white ${styles.heroheading}`}>
-                      Designing the Future of Pet Brands
-                    </h1>
+                      Designing the Future of Pet Living, Play & Talent </h1>
                   </div>
                   <div className="col-lg-4 offset-lg-2 offset-xl-2 col-xl-4 col-md-12 col-sm-12 col-12">
-                    <h2 className="text-white fs-20">
-                      We are a creative studio dedicated to the pet industry — building brands, products, and experiences that connect deeply with pet parents.
+                    <h2 className="text-white fs-20 pb-3">
+                      From furniture that blends beautifully into modern homes to toys, merchandise, and pet casting, Pawform Studio creates products and experiences that celebrate every part of pet life.
                     </h2>
                   </div>
                   <div className="d-xl-none d-block">
@@ -239,7 +240,7 @@ export default function Home() {
         </div>
 
 
-{/* 
+        {/* 
         <div ref={sectionRef} className="mb-5 userbox" >
           <div className={styles.MainServices}>
             <div className="d-xl-block d-none">
@@ -354,8 +355,8 @@ export default function Home() {
             </div>
 
           </div>
- 
-        
+
+
         </section>
 
 
@@ -366,13 +367,13 @@ export default function Home() {
             <div className="col-12 col-lg-6 offset-lg-6 p-0">
               <div className="py-5" style={{ perspective: "1000px" }}>
                 <h2 ref={textRef} className={`${styles.customFontSize} title-wrapper`}>
-                  We provide brilliant idea to grow the startup agency with your sharp brand.
+                  Building a world where pets live beautifully, play freely, inspire creativity, and shine in the spotlight
                 </h2>
               </div>
             </div>
           </div>
           <div className="mb-5">
-            <h2 className="text-center">Built for the Pet Industry. Not Just Inspired by It</h2>
+            <h2 className="text-center">Designing Better Lives for Pets and Their People.</h2>
           </div>
           <div className="row align-items-center mb-5 pb-3">
             <div className="col-lg- ps-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center align-items-end">

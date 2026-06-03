@@ -44,7 +44,7 @@ const ViedoComp = () => {
             <div className="col-lg-8 col-xl-7">
               {/* Play Button with Text */}
               <div className="d-flex align-items-center gap-3 mb-4">
-                <button
+                {/* <button
                   className="btn rounded-circle p-0 d-flex align-items-center justify-content-center"
                   style={{
                     width: '70px',
@@ -68,8 +68,8 @@ const ViedoComp = () => {
                     color: 'black',
                     marginLeft: '4px'
                   }}></i>
-                </button>
-                
+                </button> */}
+{/*                 
                 <div>
                   <p className="mb-0 text-white-50" style={{ fontSize: '14px', letterSpacing: '0.5px' }}>
                     See How We
@@ -77,7 +77,7 @@ const ViedoComp = () => {
                   <p className="mb-0 fw-semibold" style={{ fontSize: '16px' }}>
                     Help Brands Grow
                   </p>
-                </div>
+                </div> */}
               </div>
 
               {/* Main Heading */}
@@ -89,7 +89,7 @@ const ViedoComp = () => {
                   letterSpacing: '-1px'
                 }}
               >
-             Transform Your Business with <span style={{ color: 'white' }}>  Right Digital Platforms</span>
+            Creating a Better World for Pets <span style={{ color: 'white' }}></span>
               </h2>
               {/* Description */}
               <p 
@@ -101,7 +101,7 @@ const ViedoComp = () => {
                   maxWidth: '650px'
                 }}
               >
-         Whether you’re launching a new venture or upgrading an existing system, we help you create websites and web applications that support growth, engagement, and long-term success.
+        From beautiful living spaces and playful essentials to pet-inspired merchandise and casting opportunities, Pawform Studio celebrates every way pets enrich our lives
               </p>
             </div>
           </div>
