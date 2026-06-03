@@ -39,7 +39,7 @@ const ViedoComp = () => {
         ></div>
 
         {/* Content */}
-        <div className="container position-relative" style={{ zIndex: 2 }}>
+        <div className=" ps-md-4 ms-md-2 position-relative" style={{ zIndex: 2 }}>
           <div className="row">
             <div className="col-lg-8 col-xl-7">
               {/* Play Button with Text */}
