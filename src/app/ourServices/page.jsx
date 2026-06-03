@@ -8,7 +8,7 @@ import Footer from '@/Compoents/Footer';
 const page = () => {
     const sectionRef = useRef();
     const dataServicess = [
-        { id: '1', ServicesImg: "/assets/img/DOG-3.jpeg", hedaing: "Branding", },
+        { id: '1', ServicesImg: "/assets/img/icon-1.png", hedaing: "branding", },
         { id: '2', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Product Development ", },
         { id: '3', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Packaging Design ", },
         { id: '4', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Marketing & Strategy", },
@@ -113,7 +113,7 @@ const page = () => {
                                         <div className="box mb-2   mb-md-0" key={index}>
                                             <div className="position-relative custom-width-postion">
                                                 <div className="onePostion">
-                                                    <img className="ms-2 rounded-3" src={DataServicesItem.ServicesImg} width={50} />
+                                                    <img className="ms-2 rounded-3" src={DataServicesItem.ServicesImg} width={100} />
                                                 </div>
                                                 <div className="twoPostion">
                                                     <h4 className='text-white'>{DataServicesItem.hedaing}</h4>
