@@ -9,9 +9,9 @@ const page = () => {
     const sectionRef = useRef();
     const dataServicess = [
         { id: '1', ServicesImg: "/assets/img/icon-1.png", hedaing: "branding", },
-        { id: '2', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Product Development ", },
-        { id: '3', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Packaging Design ", },
-        { id: '4', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Marketing & Strategy", },
+        { id: '2', ServicesImg: "/assets/img/icon-2.png", hedaing: "Product Development ", },
+        { id: '3', ServicesImg: "/assets/img/icon-3.png", hedaing: "Packaging Design ", },
+        { id: '4', ServicesImg: "/assets/img/icon-tisting.png", hedaing: "Marketing & Strategy", },
 
     ]
 
@@ -77,11 +77,12 @@ const page = () => {
         };
     }, []);
 
-     const DataServicesImges = [ 
-        { id: '1', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Product Development ", },
-        { id: '2', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Product Development ", },
-        { id: '3', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Packaging Design ", },
-        { id: '4', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Marketing & Strategy", },
+    const DataServicesImges = [
+        { id: '1', ServicesImg: "/assets/img/Services-1.png", hedaing: "Product Development ", },
+        { id: '2', ServicesImg: "/assets/img/Services-2.png", hedaing: "Product Development ", },
+        { id: '3', ServicesImg: "/assets/img/Services-3.png", hedaing: "Packaging Design ", },
+        { id: '4', ServicesImg: "/assets/img/Services-4.png", hedaing: "Marketing & Strategy", },
+        { id: '5', ServicesImg: "/assets/img/Services-5.png", hedaing: "Marketing & Strategy", },
 
     ]
     return (
@@ -113,12 +114,11 @@ const page = () => {
                                         <div className="box mb-2   mb-md-0" key={index}>
                                             <div className="position-relative custom-width-postion">
                                                 <div className="onePostion">
-                                                    <img className="ms-2 rounded-3" src={DataServicesItem.ServicesImg} width={100} />
+                                                    <img className="ms-2 img-fluid rounded-3" src={DataServicesItem.ServicesImg} width={150}  />
                                                 </div>
                                                 <div className="twoPostion">
                                                     <h4 className='text-white'>{DataServicesItem.hedaing}</h4>
                                                 </div>
-
                                             </div>
 
                                         </div>
@@ -131,20 +131,20 @@ const page = () => {
                 </div>
             </section>
             <section>
-                 <div className='container'>
+                <div className='container'>
                     <h2 className='my-3 ps-3 text-capitalize fw-bold mb-4'>dummy content</h2>
                     <div className="row m-0">
-                       {
-                        DataServicesImges.map((OurSerImg, index)=>(
-                            <div key={index} className='col-lg-4 col-md-4 col-sm-6 col-12'>
-                            <div className='mb-4'>
-                                  <img className='img-fluid rounded-3' src={OurSerImg.ServicesImg} alt="" />
-                            </div>
-                            </div>
-                        ))
-                       }
+                        {
+                            DataServicesImges.map((OurSerImg, index) => (
+                                <div key={index} className='col-lg-4 col-md-4 col-sm-6 col-12'>
+                                    <div className='mb-4'>
+                                        <img className='img-fluid rounded-3' src={OurSerImg.ServicesImg} alt="" />
+                                    </div>
+                                </div>
+                            ))
+                        }
                     </div>
-                 </div>
+                </div>
             </section>
             <Footer />
         </>
