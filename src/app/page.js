@@ -175,10 +175,10 @@ export default function Home() {
     { id: "4", imegs: "/assets/img/PetCasting.webp", txtOne: "Pet Casting and Animal Talent", },
   ]
   const dataServices = [
-    { id: '1', ServicesImg: "/assets/img/DOG-3.jpeg", hedaing: "Branding", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
-    { id: '2', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Product Design & Development", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
-    { id: '3', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Packaging Design", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
-    { id: '4', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Strategy", desc: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's" },
+    { id: '1', ServicesImg: "/assets/img/service-1.jpeg", hedaing: "Paw Living", desc: "Thoughtfully designed pet furniture that feels at home in yours. From elegant loungers and cozy dens to stylish feeding stations, every piece blends comfort, function, and timeless design—creating beautiful spaces where pets belong without compromising your home's aesthetic." },
+    { id: '2', ServicesImg: "/assets/img/service-2.jpeg", hedaing: "Human × Pet Merch", desc: "iCelebrate the bond you share with your pet through thoughtfully designed lifestyle merchandise. Discover graphic tees, mugs, tote bags, accessories, and everyday essentials featuring playful pet-inspired designs that let you wear, carry, and share your love proudly." },
+    { id: '3', ServicesImg: "/assets/img/service-3.jpeg", hedaing: "Pet Casting", desc: "Need a pet to be the face of the next campaign? We represent dogs, cats, and companion animals for photoshoots, advertisements, brand collaborations, social media content, and commercial productions—connecting talented pets with exciting opportunities in the pet industry." },
+    { id: '4', ServicesImg: "/assets/img/service-4.jpeg", hedaing: "Paw Snuggle", desc: "A playful range of toys made for curious paws and happy tails. From cuddly plush friends to engaging enrichment toys, Paw Snuggle brings comfort, fun, and endless moments of joy—keeping pets entertained, stimulated, and ready for every adventure." },
   ]
   const leftData = dataServices.filter((_, index) => index % 2 === 0);
   const rightData = dataServices.filter((_, index) => index % 2 !== 0);
@@ -304,9 +304,9 @@ export default function Home() {
               <div className="leftColumn">
                 {leftData.map((CurrentValue, index) => (
                   <div key={index}>
-                    <div className="my-2 py-1">
+                    <div className={`my-2 py-1`}>
                       <img
-                        className="img-fluid rounded-2"
+                        className={`img-fluid rounded-2 ${styles.boxHoverImg}`}
                         src={CurrentValue.ServicesImg}
                         alt=""
                       />
