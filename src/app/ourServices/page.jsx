@@ -11,77 +11,85 @@ const page = () => {
         { id: '1', ServicesImg: "/assets/img/DOG-3.jpeg", hedaing: "Branding", },
         { id: '2', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Product Development ", },
         { id: '3', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Packaging Design ", },
-        { id: '4', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Marketing & Strategy", },   
-      
+        { id: '4', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Marketing & Strategy", },
+
     ]
 
     useEffect(() => {
         const handleScroll = () => {
-    
-          const boxes = document.querySelectorAll(".box");
-    
-          if (window.innerWidth < 1197) {
-            boxes.forEach(box => {
-              box.style.transform = "none";
-            });
-            return;
-          }
-    
-          const container = document.querySelector(".boxes");
-          if (!container || boxes.length === 0) return;
-    
-          const rect = container.getBoundingClientRect();
-    
-          const start = window.innerHeight * 0.8;
-          const end = window.innerHeight * 0.2;
-    
-          let progress = (start - rect.top) / (start - end);
-          progress = Math.max(0, Math.min(1, progress));
-          const containerWidth = window.innerWidth;
-          const boxWidth = 200;
-          const spacing = 125;
-    
-          const gap = boxWidth + spacing; // 340 
-          const maxGap = (containerWidth - boxWidth) / (boxes.length);
-          const isEven = boxes.length % 2 === 0;
-    
-          boxes.forEach((box, i) => {
-            let offset;
-    
-            if (isEven) {
-              const centerLeft = boxes.length / 2 - 1;
-              const centerRight = boxes.length / 2;
-    
-              if (i <= centerLeft) {
-                offset = i - centerLeft - 0.5;
-              } else {
-                offset = i - centerRight + 0.5;
-              }
-    
-            } else {
-              const centerIndex = Math.floor(boxes.length / 2.2);
-              offset = i - centerIndex;
+
+            const boxes = document.querySelectorAll(".box");
+
+            if (window.innerWidth < 1197) {
+                boxes.forEach(box => {
+                    box.style.transform = "none";
+                });
+                return;
             }
-    
-            box.style.transform = `translate(calc(-50% + ${offset * gap * progress}px), -50%)`;
-          });
-    
+
+            const container = document.querySelector(".boxes");
+            if (!container || boxes.length === 0) return;
+
+            const rect = container.getBoundingClientRect();
+
+            const start = window.innerHeight * 0.8;
+            const end = window.innerHeight * 0.2;
+
+            let progress = (start - rect.top) / (start - end);
+            progress = Math.max(0, Math.min(1, progress));
+            const containerWidth = window.innerWidth;
+            const boxWidth = 200;
+            const spacing = 125;
+
+            const gap = boxWidth + spacing; // 340 
+            const maxGap = (containerWidth - boxWidth) / (boxes.length);
+            const isEven = boxes.length % 2 === 0;
+
+            boxes.forEach((box, i) => {
+                let offset;
+
+                if (isEven) {
+                    const centerLeft = boxes.length / 2 - 1;
+                    const centerRight = boxes.length / 2;
+
+                    if (i <= centerLeft) {
+                        offset = i - centerLeft - 0.5;
+                    } else {
+                        offset = i - centerRight + 0.5;
+                    }
+
+                } else {
+                    const centerIndex = Math.floor(boxes.length / 2.2);
+                    offset = i - centerIndex;
+                }
+
+                box.style.transform = `translate(calc(-50% + ${offset * gap * progress}px), -50%)`;
+            });
+
         };
-    
+
         window.addEventListener("scroll", handleScroll);
         window.addEventListener("resize", handleScroll);
-    
+
         return () => {
-          window.removeEventListener("scroll", handleScroll);
-          window.removeEventListener("resize", handleScroll);
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", handleScroll);
         };
-      }, []);
+    }, []);
+
+     const DataServicesImges = [ 
+        { id: '1', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Product Development ", },
+        { id: '2', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Product Development ", },
+        { id: '3', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Packaging Design ", },
+        { id: '4', ServicesImg: "/assets/img/dog-1 (2).png", hedaing: "Marketing & Strategy", },
+
+    ]
     return (
         <>
             <Navbar className="black-Navbar" />
             <section>
                 <div>
-                    <div ref={sectionRef} className="mb-5 userbox" >
+                    <div ref={sectionRef} className="mb-lg-5 mb-0 userbox" >
                         <div className="MainServices">
                             <div className="d-xl-block d-none">
                                 <div className="d-flex justify-content-between align-items-center border border-dark m-3 p-3 rounded-4">
@@ -122,7 +130,23 @@ const page = () => {
                     </div>
                 </div>
             </section>
-            <Footer/>
+            <section>
+                 <div className='container'>
+                    <h2 className='my-3 ps-3 text-capitalize fw-bold mb-4'>dummy content</h2>
+                    <div className="row m-0">
+                       {
+                        DataServicesImges.map((OurSerImg, index)=>(
+                            <div key={index} className='col-lg-4 col-md-4 col-sm-6 col-12'>
+                            <div className='mb-4'>
+                                  <img className='img-fluid rounded-3' src={OurSerImg.ServicesImg} alt="" />
+                            </div>
+                            </div>
+                        ))
+                       }
+                    </div>
+                 </div>
+            </section>
+            <Footer />
         </>
     )
 }

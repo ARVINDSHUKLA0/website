@@ -129,6 +129,7 @@
 }
   .userbox {
     overflow: hidden !important;
+    /* height: 100vh; */
     height: 100vh;
   }
 
@@ -180,15 +181,15 @@
     .userbox {
       overflow: hidden !important;
       height: fit-content !important;
-      padding-bottom: 100px;
+      padding-bottom: 0px;
     }
   }
 @media (min-width: 600px) and (max-width: 1024px) {
   
-    .userbox {
+    .userbox { 
       overflow: hidden !important;
       height: fit-content !important;
-      padding-bottom: 150px;
+      /* padding-bottom: 150px; */
     }
      .boxes {
       position: static !important;
@@ -219,6 +220,7 @@
 
   @media (min-width: 1600px) {
     .userbox {
+      height: 15vh;
       overflow: hidden !important;
       height: fit-content !important;
       padding-bottom: 15vh;
@@ -226,7 +228,12 @@
   }
 
 
-
+@media (min-width: 1440px) and (max-width: 1599px) {
+   .userbox{
+    height: fit-content !important; 
+    padding-bottom: 100px;
+   }
+}
 
 
 
