@@ -8,10 +8,10 @@ import Footer from '@/Compoents/Footer';
 const page = () => {
     const sectionRef = useRef();
     const dataServicess = [
-        { id: '1', ServicesImg: "/assets/img/icon-1.png", hedaing: "branding", },
-        { id: '2', ServicesImg: "/assets/img/icon-2.png", hedaing: "Product Development ", },
-        { id: '3', ServicesImg: "/assets/img/icon-3.png", hedaing: "Packaging Design ", },
-        { id: '4', ServicesImg: "/assets/img/icon-tisting.png", hedaing: "Marketing & Strategy", },
+        { id: '1', ServicesImg: "/assets/img/four-icon.png", hedaing: "branding", },
+        { id: '2', ServicesImg: "/assets/img/two-icon.png", hedaing: "Product Development ", },
+        { id: '3', ServicesImg: "/assets/img/three-icon.png", hedaing: "Packaging Design ", },
+        { id: '4', ServicesImg: "/assets/img/one-icon.png", hedaing: "Marketing & Strategy", },
 
     ]
 
@@ -114,7 +114,7 @@ const page = () => {
                                         <div className="box mb-2   mb-md-0" key={index}>
                                             <div className="position-relative custom-width-postion">
                                                 <div className="onePostion">
-                                                    <img className="ms-2 img-fluid rounded-3" src={DataServicesItem.ServicesImg} width={150}  />
+                                                    <img className="ms-2 img-fluid rounded-3" src={DataServicesItem.ServicesImg} width={120}  />
                                                 </div>
                                                 <div className="twoPostion">
                                                     <h4 className='text-white'>{DataServicesItem.hedaing}</h4>
@@ -132,8 +132,8 @@ const page = () => {
             </section>
             <section>
                 <div className='container'>
-                    <h2 className='my-3 ps-3 text-capitalize fw-bold mb-4'>dummy content</h2>
-                    <div className="row m-0">
+                    <h2 className='my-3 ps-3 text-capitalize fw-bold mb-4'>our trusted client</h2>
+                    <div className="row m-0 d-flex justify-content-center align-items-center">
                         {
                             DataServicesImges.map((OurSerImg, index) => (
                                 <div key={index} className='col-lg-4 col-md-4 col-sm-6 col-12'>

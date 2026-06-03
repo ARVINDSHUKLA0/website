@@ -65,7 +65,7 @@ const Navbar = ({ theme = "dark", className = "" }) => {
                                             </ul>
                                         </li> */}
                                         <li className='list-style-none my-2'>
-                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Human x Pet March </Link>
+                                            <Link className='text-decoraion-none text-capitalize fs-16 white-custom-color' href="#">Human x Pet Merch </Link>
                                         </li>
 
                                         <li className='list-style-none my-2'>
